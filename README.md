@@ -10,7 +10,7 @@ My new website and blog at [monadi.cc](https://monadi.cc)
 
 Nix tooling for modern Haskell
 
-______________________________________________________________________
+---
 
 Getting Haskell to work with Nix is a [notoriously complex enterprise](https://www.reddit.com/r/haskell/comments/1cqfboq/latest_guidance_on_using_haskell_with_nix/).
 There are two [package](https://www.haskell.org/cabal/) [managers](https://docs.haskellstack.org/en/stable/), a [package repository](https://hackage.haskell.org/) that is only partially mirrored to [nixpkgs](https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=haskellPackages), and at least [five different ways](https://nixos.wiki/wiki/Haskell) to build Haskell projects with Nix. It's so complicated that the Nix team had to create a [flowchart](https://nixos.wiki/wiki/File:Haskell_choice.png) to help people make sense of their options.

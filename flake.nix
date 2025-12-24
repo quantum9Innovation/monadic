@@ -90,10 +90,13 @@
                 "liquid-prelude"
                 "liquid-vector"
                 "text"
+                "hakyll"
+                "filepath"
               ];
               flags = builtins.concatStringsSep " " (
                 map (ext: "-X${ext}") [
                   "DerivingStrategies"
+                  "OverloadedStrings"
                 ]
               );
               dir = "src";

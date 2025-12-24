@@ -1,7 +1,11 @@
-# --> Liquid
+# ---> Liquid
 src/*
 !src/*.hs
 .liquid
+
+# ---> Hakyll
+_cache
+_site
 
 # ---> Haskell
 dist
