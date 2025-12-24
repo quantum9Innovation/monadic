@@ -1,6 +1,12 @@
 <!-- markdownlint-disable MD013 -->
 
-# Hask
+# Monadic
+
+My new website and blog at [monadi.cc](https://monadi.cc)
+
+---
+
+*Instructions for using [this template](https://code.functor.systems/functor.systems/hask)*
 
 Nix tooling for modern Haskell
 
@@ -24,15 +30,15 @@ We've made some significant departures from the standard template, such as remov
 The default template is designed to work out-of-the-box for `x86_64-linux`.
 For other systems, change the `supportedSystems` field in [`flake.nix`](./flake.nix).
 
-Most details about your project can be changed from the [cabal file](./hello.cabal).
+Most details about your project can be changed from the [cabal file](./monadic.cabal).
 You should rename this file to match the name of your package.
 The standard template expects your main program to live in [`src/Main.hs`](./src/Main.hs) with modules [`Constants.hs`](./src/Constants.hs) and [`Utils.hs`](./src/Utils.hs).
-You can add additional modules as needed to `other-modules` in the [cabal file](./hello.cabal).
-Any necessary Haskell packages can be added to `build-depends` in the [cabal file](./hello.cabal).
+You can add additional modules as needed to `other-modules` in the [cabal file](./monadic.cabal).
+Any necessary Haskell packages can be added to `build-depends` in the [cabal file](./monadic.cabal).
 
-To run your program as an executable, use `nix run .#hello:exe:hello`, replacing `hello` with the name of your package.
+To run your program as an executable, use `nix run .#monadic:exe:monadic`.
 
-[Just](https://github.com/casey/just) comes configured as a task runner for this repository, with available tasks `docs`, `repl`, and `run`. The first of these will start a local [Hoogle](https://hoogle.haskell.org/) server with access to project-specific modules. The second will start a GHCi REPL with all project-specific modules loaded. The third will run your program as an executable. The last is equivalent to `nix run .#hello:exe:hello`.
+[Just](https://github.com/casey/just) comes configured as a task runner for this repository, with available tasks `docs`, `repl`, and `run`. The first of these will start a local [Hoogle](https://hoogle.haskell.org/) server with access to project-specific modules. The second will start a GHCi REPL with all project-specific modules loaded. The third will run your program as an executable. The last is equivalent to `nix run .#monadic:exe:monadic`.
 
 ## Pre-Commit Checks
 

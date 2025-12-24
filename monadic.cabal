@@ -2,33 +2,30 @@ cabal-version: 3.14
 -- Instructions on how to write this file are in the Cabal
 -- documentation, which can be found here:
 --   http://haskell.org/cabal/release/cabal-latest/doc/users-guide/
-name: hello
+name: monadic
 version: 1.0.0.0
 license: GPL-3.0-or-later
 license-file: LICENSE
-copyright: (c) functor.systems
-author: functor.systems
-maintainer: functor.systems <forgejo-admin@functor.systems>
-bug-reports: https://code.functor.systems/functor.systems/hask/issues
+copyright: (c) Ananth Venkatesh
+author: Ananth Venkatesh
+maintainer: Ananth Venkatesh <ananth@monadi.cc>
+bug-reports: https://code.functor.systems/q9i/monadic/issues
 stability: stable
-homepage: http://www.haskell.org/hello/
-synopsis: Hello World, an example package
-category: Console, Text
+homepage: https://monadi.cc
+synopsis: My new website and blog
+category: Web, Text
 build-type: Simple
 description:
-  This is an implementation of the classic "Hello World" program in
-  Haskell, as an example of how to create a minimal Haskell
-  application using Cabal and Hackage.  Please submit any suggestions and
-  improvements.
+  My new website and blog at https://monadi.cc
 
 source-repository head
   type: git
-  location: https://code.functor.systems/functor.systems/hask
+  location: https://code.functor.systems/q9i/monadic
 
 flag threaded
   default: False
 
-executable hello
+executable monadic
   hs-source-dirs: src
   main-is: Main.hs
   other-modules:

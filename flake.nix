@@ -115,7 +115,7 @@
 
         legacyPackages = pkgs;
         packages = flake.packages // {
-          default = flake.packages."hello:exe:hello";
+          default = flake.packages."monadic:exe:monadic";
         };
       }
     );

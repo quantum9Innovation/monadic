@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  name = "hello";
+  name = "monadic";
   compiler-nix-name = "ghc912"; # Version of GHC to use
 
   # Requires building some packages from source
