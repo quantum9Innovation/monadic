@@ -22,9 +22,9 @@ main = hakyll $ do
 
   match "posts/*" $ do
     route $ setExtension "html"
-    build postCtx $
+    build postContext $
       pandocCompiler
-        >>= loadAndApplyTemplate postTemplate postCtx
+        >>= loadAndApplyTemplate postTemplate postContext
         >>= saveSnapshot snapshotDir
 
   create ["archive.html"] $ do
@@ -32,7 +32,7 @@ main = hakyll $ do
     compile $ do
       posts <- compilePosts
       let archiveCtx =
-            listField postsDir postCtx (return posts)
+            listField postsDir postContext (return posts)
               `mappend` constField "title" "Archives"
               `mappend` defaultContext
 
@@ -43,7 +43,7 @@ main = hakyll $ do
     compile $ do
       posts <- compilePosts
       let indexCtx =
-            listField "posts" postCtx (return posts)
+            listField "posts" postContext (return posts)
               `mappend` defaultContext
 
       hydrate indexCtx $ getResourceBody >>= applyAsTemplate indexCtx

@@ -6,8 +6,8 @@ import Types
 import Hakyll
 import System.FilePath ((</>))
 
-postCtx :: Context String
-postCtx =
+postContext :: Context String
+postContext =
   dateField "date" "%B %e, %Y"
     `mappend` defaultContext
 
@@ -15,7 +15,7 @@ makeFeed :: Renderer -> Rules ()
 makeFeed renderer = do
   route idRoute
   compile $ do
-    let feedCtx = postCtx `mappend` bodyField "description"
+    let feedCtx = postContext `mappend` bodyField "description"
     posts <-
       fmap (take 10) . recentFirst
         =<< loadAllSnapshots "posts/*" "content"
