@@ -1,0 +1,49 @@
+cabal-version: 3.14
+-- Instructions on how to write this file are in the Cabal
+-- documentation, which can be found here:
+--   http://haskell.org/cabal/release/cabal-latest/doc/users-guide/
+name: hello
+version: 1.0.0.0
+license: GPL-3.0-or-later
+license-file: LICENSE
+copyright: (c) functor.systems
+author: functor.systems
+maintainer: functor.systems <forgejo-admin@functor.systems>
+bug-reports: https://code.functor.systems/functor.systems/hask/issues
+stability: stable
+homepage: http://www.haskell.org/hello/
+synopsis: Hello World, an example package
+category: Console, Text
+build-type: Simple
+description:
+  This is an implementation of the classic "Hello World" program in
+  Haskell, as an example of how to create a minimal Haskell
+  application using Cabal and Hackage.  Please submit any suggestions and
+  improvements.
+
+source-repository head
+  type: git
+  location: https://code.functor.systems/functor.systems/hask
+
+flag threaded
+  default: False
+
+executable hello
+  hs-source-dirs: src
+  main-is: Main.hs
+  other-modules:
+    Constants
+    Utils
+
+  build-depends:
+    base,
+    text
+
+  default-language: GHC2024
+  default-extensions:
+    DerivingStrategies
+
+  if flag(threaded)
+    ghc-options:
+      -threaded
+      -XDerivingStrategies
