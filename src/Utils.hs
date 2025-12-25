@@ -4,7 +4,7 @@ import Constants
 import Types
 
 import Hakyll
-import System.FilePath ((</>))
+import System.FilePath ((</>), takeDirectory, takeFileName)
 
 postContext :: Context String
 postContext =
@@ -36,5 +36,22 @@ build context = compile . hydrate context
 make :: Compiler (Item String) -> Rules ()
 make = compile . hydrate defaultContext
 
-sameRoot :: Rules ()
-sameRoot = route idRoute
+sameRoute :: Rules ()
+sameRoute = route idRoute
+
+reroute :: (FilePath -> FilePath) -> Rules ()
+reroute f = route $ customRoute $ f . toFilePath
+
+-- take e.g. fonts/degheest/fonts/otf/abc.otf -> fonts/degheest/abc.otf
+toFontDir :: FilePath -> FilePath
+toFontDir p =
+  let dir  = takeDirectory (takeDirectory (takeDirectory p))
+      file = takeFileName p
+  in dir </> file
+
+-- take e.g. fonts/lilex/otf/abc.otf -> fonts/lilex/abc.otf
+toFontDirSimple :: FilePath -> FilePath
+toFontDirSimple p =
+  let dir  = takeDirectory (takeDirectory p)
+      file = takeFileName p
+  in dir </> file

@@ -2,18 +2,43 @@ module Main where
 
 import Constants
 import Utils
+import Style
 
 import Data.Monoid (mappend)
+import System.FilePath (takeFileName)
 import Hakyll
 
 main :: IO ()
-main = hakyll $ do
-  match "images/*" $ do
-    sameRoot
-    compile copyFileCompiler
+main = generateSite
 
-  match "css/*" $ do
-    sameRoot
+generateSite :: IO ()
+generateSite = hakyll $ do
+  match "images/*" $ do
+    sameRoute
+    compile copyFileCompiler
+    
+  match "root/favicon.*" $ do
+    reroute takeFileName
+    compile copyFileCompiler
+    
+  match "fonts/degheest/fonts/otf/*" $ do
+    reroute toFontDir
+    compile copyFileCompiler
+    
+  match "fonts/lilex/otf/*" $ do
+    reroute toFontDirSimple
+    compile copyFileCompiler
+    
+  match "fonts/libertinus/*" $ do
+    sameRoute
+    compile copyFileCompiler
+    
+  create ["css/style.css"] $ do
+    sameRoute
+    compile $ makeItem css
+    
+  match "css/*.css" $ do
+    sameRoute
     compile compressCssCompiler
 
   match (fromList topLevel) $ do
@@ -28,7 +53,7 @@ main = hakyll $ do
         >>= saveSnapshot snapshotDir
 
   create ["archive.html"] $ do
-    sameRoot
+    sameRoute
     compile $ do
       posts <- compilePosts
       let archiveCtx =
@@ -38,8 +63,8 @@ main = hakyll $ do
 
       hydrate archiveCtx $ makeItem "" >>= loadAndApplyTemplate archiveTemplate archiveCtx
 
-  match "index.html" $ do
-    sameRoot
+  match "root/index.html" $ do
+    reroute takeFileName
     compile $ do
       posts <- compilePosts
       let indexCtx =

@@ -92,6 +92,7 @@
                 "text"
                 "hakyll"
                 "filepath"
+                "clay"
               ];
               flags = builtins.concatStringsSep " " (
                 map (ext: "-X${ext}") [

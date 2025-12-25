@@ -1,6 +1,7 @@
 module Constants where
 
 import Hakyll
+import Clay
 import System.FilePath ((</>))
 
 feed :: FeedConfiguration
@@ -33,3 +34,6 @@ archiveTemplate = fromFilePath $ templatesDir </> "archive.html"
 
 postTemplate :: Identifier
 postTemplate = fromFilePath $ templatesDir </> "post.html"
+
+deepblue :: Color
+deepblue = "#004bfe"

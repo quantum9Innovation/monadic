@@ -32,12 +32,14 @@ executable monadic
     Constants
     Types
     Utils
+    Style
 
   build-depends:
     base,
     filepath,
     hakyll,
-    text
+    text,
+    clay
 
   default-language: GHC2024
   default-extensions:

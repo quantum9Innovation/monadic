@@ -976,14 +976,8 @@
     lhs: Data.Text.pack
     rhs: toText
 - warn:
-    lhs: Data.Text.unpack
-    rhs: toString
-- warn:
     lhs: Data.Text.Lazy.pack
     rhs: toLText
-- warn:
-    lhs: Data.Text.Lazy.unpack
-    rhs: toString
 - warn:
     lhs: Data.Text.Lazy.toStrict
     rhs: toText
