@@ -286,6 +286,8 @@ styles = do
     float floatLeft
     height (Clay.rem 4)
     borderRadius (pct 50) (pct 50) (pct 50) (pct 50)
+    marginLeft (px 15)
+    marginRight (px 15)
       
   ".left" ? do
     textAlign start
@@ -343,7 +345,8 @@ styles = do
       flexWrap FB.wrap
       
     "#icon" ? do
-      paddingRight (px 5)
+      marginLeft (px 15)
+      marginRight (px 15)
       
     "#map-danville" ? do
       marginBottom (px 20)
@@ -456,6 +459,10 @@ styles = do
       a ? do
         display inline
         margin (Clay.rem 0) (Clay.rem 0) (Clay.rem 0) (Clay.rem 1.2)
+        
+    "#icon" ? do
+      marginLeft (px 0)
+      marginRight (px 0)
     
     footer ? do
       textAlign end
@@ -487,6 +494,10 @@ styles = do
     
     footer ? do
       textAlign end
+      
+    "#icon" ? do
+      marginLeft (px 0)
+      marginRight (px 0)
     
     ".logo" ? do
       margin (px 0) (px 0) (px 0) (px 0)

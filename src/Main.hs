@@ -77,7 +77,7 @@ generateSite = hakyll $ do
     reroute toRootHTML
     make pandocCompiler
     
-  match "root/*.rst" $ do
+  match "root/*.typ" $ do
       reroute toRootHTML
       make pandocCompiler
   
