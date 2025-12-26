@@ -4,7 +4,7 @@ import Constants
 import Types
 
 import Hakyll
-import System.FilePath ((</>), takeDirectory, takeFileName)
+import System.FilePath ((</>), takeDirectory, takeFileName, takeBaseName)
 
 postContext :: Context String
 postContext =
@@ -41,6 +41,14 @@ sameRoute = route idRoute
 
 reroute :: (FilePath -> FilePath) -> Rules ()
 reroute f = route $ customRoute $ f . toFilePath
+
+-- take e.g. root/abc.md -> /abc/index.html
+toRootHTML :: FilePath -> FilePath
+toRootHTML p = takeBaseName p </> "index.html"
+
+-- take e.g. dir/abc.md -> dir/abc/index.html
+expandRoute :: FilePath -> FilePath
+expandRoute p = takeDirectory p </> takeBaseName p </> "index.html"
 
 -- take e.g. fonts/degheest/fonts/otf/abc.otf -> fonts/degheest/abc.otf
 toFontDir :: FilePath -> FilePath

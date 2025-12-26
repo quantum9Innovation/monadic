@@ -4,7 +4,15 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>monadi.cc - $title$</title>
+        <title>
+          $if(pagetitle)$
+            $pagetitle$
+          $else$ $if(slug)$
+            monadi.cc | $slug$
+          $else$
+            monadi.cc | $title$
+          $endif$ $endif$
+        </title>
         <link rel="stylesheet" href="/css/style.css" />
         <link rel="icon" href="/favicon.svg" />
     </head>
@@ -19,13 +27,14 @@
                 </a>
             </div>
             <nav>
-                <a href="/">home</a>
-                <a href="/about.html">about</a>
-                <a href="/contact.html">contact</a>
-                <a href="/archive.html">archive</a>
+                <a href="/explore/">Explore</a>
+                <a href="/about/">About</a>
+                <a href="/colophon/">Colophon</a>
+                <a href="/archive/">Archive</a>
             </nav>
         </header>
 
+        <div id="bg"></div>
         <main role="main">
             <h1>$title$</h1>
             $body$
@@ -39,6 +48,10 @@
             and <a href="https://topos.institute/blog/2024-10-31-declarative-models-and-collaborative-modeling/">declaratively generated</a> by <a href="http://jaspervdj.be/hakyll">Hakyll</a>.
             
             <br><br>
+            <div class="left">
+              Credits for typography and other design elements can be found in the <a href="/colophon/">colophon</a>.
+            </div>
+            <br>
             <div class="left">Made with ❤️ in Danville, California.</div>
         </footer>
     </body>

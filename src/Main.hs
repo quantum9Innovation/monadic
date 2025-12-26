@@ -53,7 +53,7 @@ generateSite = hakyll $ do
         >>= saveSnapshot snapshotDir
 
   create ["archive.html"] $ do
-    sameRoute
+    reroute expandRoute
     compile $ do
       posts <- compilePosts
       let archiveCtx =
@@ -72,7 +72,15 @@ generateSite = hakyll $ do
               `mappend` defaultContext
 
       hydrate indexCtx $ getResourceBody >>= applyAsTemplate indexCtx
-
+  
+  match "root/*.md" $ do
+    reroute toRootHTML
+    make pandocCompiler
+    
+  match "root/*.rst" $ do
+      reroute toRootHTML
+      make pandocCompiler
+  
   match "templates/*" $ compile templateBodyCompiler
 
   create ["atom.xml"] $ makeFeed renderAtom

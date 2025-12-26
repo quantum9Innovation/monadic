@@ -5,32 +5,47 @@ import Clay
 import Constants
 import qualified Clay.Media as Media
 import qualified Clay.FontFace as FF
+import qualified Clay.Flexbox as FB
 
 abordage :: Css
 abordage = fontFace $ do
-  fontFamily ["Abordage"] []
+  fontFamily ["Abordage"] [ ]
   fontFaceSrc [ FF.FontFaceSrcUrl "../fonts/degheest/Abordage-Regular.otf" (Just FF.OpenType) ]
   fontWeight normal
   fontStyle normal 
   
 latitude :: Css
 latitude = fontFace $ do
-  fontFamily ["Latitude"] []
+  fontFamily ["Latitude"] [ ]
   fontFaceSrc [ FF.FontFaceSrcUrl "../fonts/degheest/Latitude-Regular.otf" (Just FF.OpenType) ]
   fontWeight normal
   fontStyle normal
   
 libertinus :: Css
 libertinus = fontFace $ do
-  fontFamily ["Libertinus"] []
+  fontFamily ["Libertinus"] [ ]
   fontFaceSrc [ FF.FontFaceSrcUrl "../fonts/libertinus/LibertinusSerif-Regular.ttf" (Just FF.TrueType) ]
+  fontWeight normal
+  fontStyle normal
+  
+libertinusItalic :: Css
+libertinusItalic = fontFace $ do
+  fontFamily ["Libertinus Italic"] [ ]
+  fontFaceSrc [ FF.FontFaceSrcUrl "../fonts/libertinus/LibertinusSerif-Italic.ttf" (Just FF.TrueType) ]
   fontWeight normal
   fontStyle normal
   
 lilex :: Css
 lilex = fontFace $ do
-  fontFamily ["Lilex"] []
+  fontFamily ["Lilex"] [ ]
   fontFaceSrc [ FF.FontFaceSrcUrl "../fonts/lilex/Lilex-Regular.otf" (Just FF.OpenType) ]
+  fontWeight normal
+  fontStyle normal
+  
+lilexWeighted :: Css
+lilexWeighted = fontFace $ do
+  fontFamily ["Lilex Medium"] [ ]
+  fontFaceSrc [ FF.FontFaceSrcUrl "../fonts/lilex/Lilex-Medium.otf" (Just FF.OpenType) ]
   fontWeight normal
   fontStyle normal
  
@@ -39,23 +54,55 @@ fonts = do
   abordage
   latitude
   libertinus
+  libertinusItalic
   lilex
+  lilexWeighted
   
 uniformLinkStyle :: Css
 uniformLinkStyle = do
   textDecoration none
   color deepblue
   
+gradientAnimation :: Css
+gradientAnimation = do
+  keyframes "gradient" [
+    (0, backgroundPosition (positioned (pct 0) (pct 0))),
+    (100, backgroundPosition (positioned (pct 100) (pct 100))) ]
+  
 styles :: Css
 styles = do
   fonts
+  gradientAnimation
   
   ".image-link" ? uniformLinkStyle
   
   "::selection" ? do
     backgroundColor deepblue
     color white
-
+  
+  "#bg" ? do
+    position fixed
+    zIndex (-1)
+    top (px 0)
+    left (px 0)
+    width (vw 100)
+    height (vh 100)
+    background (linearGradient (angular (deg (180 - 45))) [
+      (rgba 255 0 0 0.2, pct 0),
+      (rgba 255 255 255 0.2, pct (100 / 10)),
+      (rgba 255 128 0 0.2, pct (2 * 100 / 10)),
+      (rgba 255 255 255 0.2, pct (3 * 100 / 10)),
+      (rgba 255 255 0 0.2, pct (4 * 100 / 10)),
+      (rgba 255 255 255 0.2, pct (5 * 100 / 10)),
+      (rgba 255 0 255 0.2, pct (6 * 100 / 10)),
+      (rgba 255 255 255 0.2, pct (7 * 100 / 10)),
+      (rgba 255 255 255 0.2, pct (8 * 100 / 10)),
+      (rgba 255 255 255 0.2, pct (9 * 100 / 10)),
+      (rgba 255 255 255 0.2, pct 100)
+      ])
+    backgroundSize (by (pct 800) (pct 800))
+    animation "gradient" (sec 7) ease (sec 0) (iterationCount 1) normal forwards
+  
   html ? do
     fontSize (pct 62.5)
     fontFamily ["Libertinus"] []
@@ -64,16 +111,25 @@ styles = do
     fontSize (Clay.rem 2)
     color black
     
+  code ? do
+    fontFamily ["Lilex Medium"] []
+    fontSize (Clay.rem 2.1)
+    paddingLeft (Clay.rem 0.5)
+    paddingRight (Clay.rem 0.5)
+    
   p ? do
     fontFamily ["Libertinus"] []
-    fontSize (Clay.rem 1.8)
+    fontSize (Clay.rem 2.1)
+    maxWidth (Clay.rem 70)
     color black
     
   a ? do
     color deepblue
     textDecoration none
     ":visited" & color deepblue
-    ":hover" & textDecoration underline
+    ":hover" & do
+      backgroundColor deepblue
+      color white
     ":active" & textDecoration underline
     ":focus" & textDecoration underline
     
@@ -89,9 +145,23 @@ styles = do
     
     ".quote" ? do
       textAlign start
+      "::selection" & do
+        color white
+        backgroundColor darkblue
     
     ".attr" ? do
+      fontFamily ["Libertinus Italic"] []
       textAlign end
+      color darkgray
+      a ? do
+        color darkblue
+        ":hover" & do
+          backgroundColor darkblue
+          color white
+        
+  ".cmd" ? do
+    fontFamily ["Lilex"] []
+    fontSize (Clay.rem 2.5)
     
   header ? do
     height (Clay.rem 5)
@@ -103,9 +173,16 @@ styles = do
     a ? do
       fontFamily ["Latitude"] []
       fontSize (Clay.rem 2.2)
+      textTransform lowercase
       color black
       textDecoration none
       ":visited" & color black
+      ":focus" & textDecoration none
+      ":active" & textDecoration none
+      ":hover" & do
+        textDecoration none
+        backgroundColor black
+        color white
   
   footer ? do
     fontFamily ["Latitude"] []
@@ -114,6 +191,9 @@ styles = do
     borderTop (Clay.rem 0.2) solid black
     fontSize (Clay.rem 1.4)
     color "#555"
+    
+    ".left" ? do
+      maxWidth (Clay.rem 35)
     
   h1 ? do
     fontFamily ["Abordage"] []
@@ -139,9 +219,21 @@ styles = do
       marginLeft (px 0)
       marginRight (pct 5)
       verticalAlign middle
+      
+  "#maps" ? do
+    display flex
+    justifyContent Clay.center
+    alignItems Clay.center
+  
+  "#map-danville" ? do
+    marginRight (px 10)
+    
+  ".caption" ? do
+    fontFamily ["Latitude"] []
+    fontSize (Clay.rem 2.2)
     
   ".username" ? do
-    fontFamily ["Lilex"] []
+    fontFamily ["Lilex Medium"] []
     fontSize (Clay.rem 2.4)
     
     ":hover" & do
@@ -150,10 +242,9 @@ styles = do
     
     a ? do
       uniformLinkStyle
-      ":hover" & textDecoration underline
-      ":visited" & uniformLinkStyle
-      ":active" & textDecoration underline
-      ":focus" & textDecoration underline
+      ":hover" & do
+        color white
+        textDecoration underline
   
   ".username-tooltip" ? do
     visibility hidden
@@ -205,83 +296,179 @@ styles = do
     margin (px 0) (px 0) (px 0) (px 0)
     borderRadius (px 20) (px 20) (px 20) (px 20)
     
-  query Media.screen [Media.maxWidth (px 319)] $ do
+  query Media.screen [Media.maxWidth (px 475)] $ do
     body ? do
-      width (pct 90)
-      margin (px 0) (px 0) (px 0) (px 0)
-      padding (pct 0) (pct 0) (pct 5) (pct 5)
+      fontSize (Clay.rem 1.5)
+  
+    h1 ? do
+      fontSize (Clay.rem 3)
+      
+    h2 ? do
+      fontSize (Clay.rem 3)
+      
+    h3 ? do
+      fontSize (Clay.rem 1.8)
+      
+    ".logo" ? a ? do
+      ":hover" & do
+        backgroundColor white
+        color deepblue
+      
+    ".username" ? do
+      fontSize (Clay.rem 1.8)
+      
+    p ? do
+      fontSize (Clay.rem 1.5)
+      
+    ".subtitle" ? do
+      width (pct 100)
+      fontSize (Clay.rem 1.5)
+      marginRight (px 0)
+      
+    "#main-content" ? do
+      flexWrap FB.wrap
+      justifyContent flexStart
+      
+      ".subtitle" ? do
+        width (pct 100)
+      
+    "#main-image" ? do
+      width (pct 60)
+      
+    "#main-image" ? do
+      width (pct 40)
+      marginBottom (Clay.rem 3)
+      
+    "#maps" ? do
+      flexWrap FB.wrap
+      
+    "#icon" ? do
+      paddingRight (px 5)
+      
+    "#map-danville" ? do
+      marginBottom (px 20)
     
-    header ? do
-      borderBottom (px 0) solid black
-      margin (Clay.rem 4.2) (Clay.rem 0) (Clay.rem 4.2) (Clay.rem 0)
-    
+    code ? do
+      fontSize (Clay.rem 1.5)
+      
     nav ? do
-      margin (Clay.rem 0) auto (Clay.rem 3) (Clay.rem 3)
-      textAlign Clay.center
-    
-    footer ? do
-      textAlign start
-      
-    ".logo" ? do
-      textAlign Clay.center
-      margin (Clay.rem 1) auto (Clay.rem 3) (Clay.rem 3)
-      
-      a ? do
-        fontSize (Clay.rem 2.4)
-    
-    nav ? a ? do
       display block
-      lineHeight (Clay.rem (2.4 * 1.6))
- 
-  query Media.screen [Media.minWidth (px 320)] $ do
-    body ? do
-      width (pct 90)
+      textAlign start
+      paddingBottom (Clay.rem 1.4)
+      width (pct 100)
       margin (px 0) (px 0) (px 0) (px 0)
-      padding (pct 0) (pct 0) (pct 5) (pct 5)
-    
-    header ? do
-      borderBottom (px 0) solid black
-      margin (Clay.rem 4.2) (Clay.rem 0) (Clay.rem 0) (Clay.rem 4.2)
-    
-    nav ? do
-      margin (Clay.rem 0) auto (Clay.rem 3) (Clay.rem 3)
       a ? do
         display inline
-        margin (Clay.rem 0) (Clay.rem 0.6) (Clay.rem 0) (Clay.rem 0.6)
-    
+        margin (Clay.rem 0) (Clay.rem 0) (Clay.rem 0) (Clay.rem 1.2)
+      
     footer ? do
       textAlign start
     
-    ".logo" ? do
-      textAlign Clay.center
-      margin (Clay.rem 1) auto (Clay.rem 3) (Clay.rem 3)
-    
-      a ? do
-        fontSize (Clay.rem 2.4)
-    
-  query Media.screen [Media.minWidth (px 640)] $ do
+    header ? do 
+      height (Clay.rem (10 + 2 * 1.4))
+      
+    blockquote ? do
+      fontSize (Clay.rem 1.6)
+      marginLeft (px 0)
+      marginRight (px 0)
+      
+      p ? do
+        fontSize (Clay.rem 1.6)
+      
+    ".caption" ? do
+      fontSize (Clay.rem 1.6)
+        
+  query Media.screen [Media.minWidth (px 476), Media.maxWidth (px 600)] $ do
     body ? do
-      width (Clay.rem 60)
-      margin (px 0) auto auto (px 0)
-    
+      paddingLeft (px 0)
+      
     header ? do
+      width (pct 100)
+      height (Clay.rem (10 + 1.4))
+      borderBottom (Clay.rem 0.2) solid black
       margin (Clay.rem 3) (Clay.rem 0) (Clay.rem 3) (Clay.rem 0)
-    
+      
     nav ? do
+      display block
+      textAlign start
+      width (pct 100)
       margin (px 0) (px 0) (px 0) (px 0)
       a ? do
         display inline
-        margin (Clay.rem 0) (Clay.rem 0.6) (Clay.rem 0) (Clay.rem 0.6)
+        margin (Clay.rem 0) (Clay.rem 0) (Clay.rem 0) (Clay.rem 1.2)
+  
+    h1 ? do
+      fontSize (Clay.rem 5)
+      
+    h3 ? do
+      fontSize (Clay.rem 2)
+      
+    ".logo" ? a ? do
+      ":hover" & do
+        backgroundColor white
+        color deepblue
+      
+    ".username" ? do
+      fontSize (Clay.rem 2)
+      
+    p ? do
+      fontSize (Clay.rem 1.8)
+    
+    "#main-content" ? do
+      flexWrap FB.wrap
+      justifyContent flexStart
+      
+      ".subtitle" ? do
+        fontSize (Clay.rem 2)
+        width (pct 100)
+   
+    blockquote ? do
+      width (pct 100)
+      marginLeft (px 0)
+      marginRight (px 0)
+        
+    "#main-image" ? do
+      width (pct 40)
+      marginBottom (Clay.rem 3)
+      
+    "#maps" ? do
+      flexWrap FB.wrap
+      
+    "#map-danville" ? do
+      marginBottom (px 20)
+    
+  query Media.screen [Media.minWidth (px 601), Media.maxWidth (px 1023)] $ do
+    body ? do
+      width (pct 80)
+      margin (px 0) auto (px 0) auto
+    
+    header ? do
+      width (pct 100)
+      height (Clay.rem (10 + 1.4))
+      borderBottom (Clay.rem 0.2) solid black
+      margin (Clay.rem 3) (Clay.rem 0) (Clay.rem 3) (Clay.rem 0)
+      
+    nav ? do
+      display block
+      textAlign start
+      width (pct 100)
+      margin (px 0) (px 0) (px 0) (px 0)
+      a ? do
+        display inline
+        margin (Clay.rem 0) (Clay.rem 0) (Clay.rem 0) (Clay.rem 1.2)
     
     footer ? do
-      textAlign start
+      textAlign end
     
     ".logo" ? do
-      textAlign Clay.center
-      margin (Clay.rem 1) auto (Clay.rem 3) (Clay.rem 3)
+      display block
+      height (Clay.rem 5)
+      margin (px 0) (px 0) (px 0) (px 0)
+      textAlign start
     
       a ? do
-        fontSize (Clay.rem 2.4)
+        float floatLeft
+        fontSize (Clay.rem 2.2)
     
   query Media.screen [Media.minWidth (px 1024)] $ do
     body ? do

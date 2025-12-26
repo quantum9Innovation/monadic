@@ -1,4 +1,5 @@
 ---
+pagetitle: "monadi.cc"
 title: Monadic. 🌯
 ---
 
@@ -15,13 +16,105 @@ title: Monadic. 🌯
 
 <blockquote>
   <p class="quote">
-    Category theory is to mathematics what garlic is to cooking. It is a widespread ingredient that adds a very important flavor. But, usually, it should be minced and mixed in, and used with restraint.
+    In civilizations without monads, dreams dry up, mutation takes the place of purity and the Rustaceans take the place of Hasklars.
   </p>
-  <p class="attr">—<a href="https://mathoverflow.net/a/41060">Greg Kuperberg</a></p> 
+  <p class="attr">—<a href="https://www.reddit.com/user/lol-no-monads/">Simon Haskal</a></p> 
 </blockquote>
 
-<h2>Posts</h2>
+<h2 class="cmd">$$ whoami</h2>
+<p>
+  The Ancient Greek playwright Euripides once said: &ldquo;Every man is like the company he is wont to keep.&rdquo;
+  <a href="https://bartoszmilewski.com/2015/01/07/products-and-coproducts/">Bartosz Milewski continues</a>, &ldquo;We are defined by our relationships. Nowhere is this more true than in category theory. If we want to single out a particular object in a category, we can only do this by describing its pattern of relationships with other objects (and itself). These relationships are defined by morphisms.&rdquo;
+</p>
+<p>
+  The analogy is clear—understanding people is akin to understanding the categories that they inhabit.
+  We are defined by the morphisms that connect us to other people and organizations bigger than ourselves.
+  In this spirit, I will answer the question &ldquo;Who am I?&rdquo; through an exploration of the relationships that connect me to <a href="https://johncarlosbaez.wordpress.com/2015/03/27/spivak-part-1/">the world at large</a>.
+</p>
+<p>
+  I'm a member of <a href="https://functor.systems/">functor.systems</a>, itself a proper subset of the <a href="https://www.mit.edu/~ajzd/opencompute/">OpenCompute Laboratory</a> (stylized OCλ).
+  I (pretend to) study <a href="https://math.mit.edu/academics/undergrad/major/course18c.html">mathematics with computer science</a> (course 18-C) at <a href="https://share.google/dSLwSvIYTaSNytBBV">Mass Tech</a>, where I'm a sophomore ('28).
+  There I've been able to work with the <a href="https://zardini.mit.edu/">Zardini Lab</a> on categorical design theories.
+  I spent my first year in the <a href="https://esg.mit.edu/">Experimental Study Group</a> (ESG) and now work as a teaching assistant there.
+  Before that, I helped with the <a href="https://coronasurveys.org/">CoronaSurveys project</a> and spent two years leading research into robotic control systems at <a href="https://www.team1280.com/">Team 1280</a>.
+</p>
+
+<h2 class="cmd">$$ whereis $$(whoami)</h2>
+<p>
+  That's a <a href="https://okmij.org/ftp/Computation/monadic-shell.html">monadic bind</a>, by the way.
+  Calling <code>whoami</code> must alter the state of the world to obtain the current user's name.
+  We ignore these side effects and delay evaluation until after the result is piped to <code>whereis</code>.
+  Unfortunately the result of this command is non-deterministic (see below).
+</p>
+<p>
+  I grew up in the East Bay in California.
+  Nowadays I split my time between Danville, Calif. and Cambridge, Mass.
+  The former is the intergalactic headquarters of <a href="https://functor.systems">functor.systems</a> and the latter is the seat of <a href="https://share.google/dSLwSvIYTaSNytBBV">Mass Tech</a>.
+</p>
+
+<div id="maps">
+  <div id="map-danville" style="width: 400px; height: 300px;"></div>
+  <div id="map-cambridge" style="width: 400px; height: 300px;"></div>
+</div>
+<p class="caption">
+  <em>Above left</em>: Danville, California
+  <br>
+  <em>Above right</em>: Cambridge, Massachusetts
+</p>
+
+<script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
+<link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
+<script>
+  var map = new maplibregl.Map({
+    container: 'map-danville',
+    style: 'https://tiles.openfreemap.org/styles/liberty',
+    center: [-122.0008863, 37.8225936],
+    pitch: 80,
+    bearing: 0,
+    zoom: 16
+  });
+</script>
+
+<script>
+  var map = new maplibregl.Map({
+    container: 'map-cambridge',
+    style: 'https://tiles.openfreemap.org/styles/liberty',
+    center: [-71.092282, 42.3596601],
+    pitch: 80,
+    bearing: 0,
+    zoom: 15
+  });
+</script>
+
+<h2 class="cmd">$$ ls</h2>
+<p>
+  It turns out organizing my thoughts coherently into a single site proved more complicated than I initially expected.
+  Rather than clutter up the main menu with an assortment of links, I've attempted to come up with a more sensible organization of this site in the <a href="/explore.html">explore</a> page.
+</p>
+<p>
+  Most of the other tabs are self-explanatory.
+  <a href="/about/">About</a> gives a more detailed introduction to who I am and what my current interests are.
+  I update it semi-regularly, and it's a good springboard for a focused exploration of this site.
+  My contact information is also available there.
+</p>
+<p>
+  I also keep a <a href="/colophon/">colophon</a> for this site.
+  I realize this is rather unconventional—but I think it's well-motivated given the nature of this site.
+  I also have a <a href="https://macgregor.mit.edu">history of making these</a>.
+  If you're interested in the technical details involved in putting a project like this together, it will make for a good read.
+  It's continuously updated with the newest developments as I update the underlying site-builder technology.
+  The colophon also contains important credits for relevant design elements, like this site's unique typography.
+</p>
+<p>
+  Finally, this site also serves as a blog for me to philosophize about the universe and its many intricacies.
+  In keeping with the tradition of public intellectualism promoted by prominent thinkers like <a href="https://bartoszmilewski.com/">Bartosz Milewski</a>, <a href="https://johncarlosbaez.wordpress.com/">John Baez</a>, and the <a href="https://golem.ph.utexas.edu/category/">applied category theory community</a> as a whole, it seems that blogging has given us a powerful new tool to spread knowledge.
+  You can find the full record of my blog posts in the <a href="/archive/">archive</a>.
+  It's quite sparse at the moment given that it launched relatively recently, but my hope is that it will grow into a useful repository of knowledge in a few years.
+  Like the rest of this site, it's an interesting experiment that I'll come to learn from in the future.
+</p>
+
+<h2>Recently</h2>
 <p>Hot off the press:</p>
 $partial("templates/post-list.html")$
 
-<p>For more, search the <a href="/archive.html">archives</a>.</p>
+<p>For more, search the <a href="/archive/">archives</a>.</p>
