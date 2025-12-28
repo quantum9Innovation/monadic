@@ -39,7 +39,8 @@ executable monadic
     filepath,
     hakyll,
     text,
-    clay
+    clay,
+    liquidhaskell
 
   default-language: GHC2024
   default-extensions:

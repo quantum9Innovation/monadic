@@ -29,6 +29,13 @@
         overlays = [
           haskellNix.overlay
           (final: _prev: {
+            haskell-nix = _prev.haskell-nix // {
+              extraPkgconfigMappings = _prev.haskell-nix.extraPkgconfigMappings // {
+                # String pkgconfig-depends names are mapped to lists of Nixpkgs
+                # package names
+                "z3" = [ "z3" ];
+              };
+            };
             hixProject = final.haskell-nix.hix.project {
               src = ./.;
             };
