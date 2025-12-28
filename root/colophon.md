@@ -153,7 +153,7 @@ Knuth, one of the most famous theoretical computer scientists of the century, is
 You've probably seen variants of this font in practically every technical document ever published in LaTeX or similar typesetting programs, but here's some math that's fun to write out:
 
 \\[ 
-  \\int_{-\\infty}^{\\infty} e^{-x ^ 2} dx = \\sqrt{\\pi}
+  \\int_{-\\infty}^{\\infty} e^{-x ^ 2} dx = \\sqrt{\\frac{\\tau}{2}}
 \\]
 
 The font is not being actively developed anymore, but you can download the official [TeX package](https://tug.org/FontCatalogue/computermodern/) to inspect the source.
