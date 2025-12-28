@@ -21,6 +21,10 @@ Also available under the "Members" section of the [main site](https://functor.sy
 
   - The only other electrical engineer at [functor.systems](https://functor.systems/); he developed a [neural network entirely in HolyC](https://forgejo.mit.edu/OCL/BurningBush) and runs the startup incubator λ-combinator at MIT
 
+- [Arvind Venkatesh](https://rvind.dev)
+
+  - Hacker by day, musician by night; ponders a wide variety of philosophical questions relating to [linguistic shift](https://pdodds.w3.uvm.edu/teaching/courses/2009-08UVM-300/docs/others/2003/abrams2003.pdf), [transformational music theory](https://link.springer.com/book/10.1007/978-3-319-64364-9), and embodied robotic systems.
+
 - [Nicholas Luo](https://github.com/Nluo923)
 
   - Theoretical computer scientist and Vulkan graphics expert; he served as head of [controls architecture](https://eexiv.functor.systems/author/nluo) over at [Team 1280](https://www.team1280.com/) immediately after I left the team, during which time he brought many bleeding edge research projects to fruition.

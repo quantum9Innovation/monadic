@@ -89,15 +89,17 @@ styles = do
     height (vh 100)
     background (linearGradient (angular (deg (180 - 45))) [
       (rgba 255 0 0 0.2, pct 0),
-      (rgba 255 255 255 0.2, pct (100 / 10)),
-      (rgba 255 128 0 0.2, pct (2 * 100 / 10)),
-      (rgba 255 255 255 0.2, pct (3 * 100 / 10)),
-      (rgba 255 255 0 0.2, pct (4 * 100 / 10)),
-      (rgba 255 255 255 0.2, pct (5 * 100 / 10)),
-      (rgba 255 0 255 0.2, pct (6 * 100 / 10)),
-      (rgba 255 255 255 0.2, pct (7 * 100 / 10)),
-      (rgba 255 255 255 0.2, pct (8 * 100 / 10)),
-      (rgba 255 255 255 0.2, pct (9 * 100 / 10)),
+      (rgba 255 64 0 0.2, pct (100 / 12)),
+      (rgba 255 128 0 0.2, pct (2 * 100 / 12)),
+      (rgba 255 255 255 0.2, pct (3 * 100 / 12)),
+      (rgba 255 128 0 0.2, pct (4 * 100 / 12)),
+      (rgba 255 255 255 0.2, pct (5 * 100 / 12)),
+      (rgba 255 255 0 0.2, pct (6 * 100 / 12)),
+      (rgba 255 255 255 0.2, pct (7 * 100 / 12)),
+      (rgba 255 0 255 0.2, pct (8 * 100 / 12)),
+      (rgba 255 255 255 0.2, pct (9 * 100 / 12)),
+      (rgba 255 255 255 0.2, pct (10 * 100 / 12)),
+      (rgba 255 255 255 0.2, pct (11 * 100 / 12)),
       (rgba 255 255 255 0.2, pct 100)
       ])
     backgroundSize (by (pct 800) (pct 800))
@@ -142,9 +144,10 @@ styles = do
       fontFamily ["Libertinus"] []
       fontSize (Clay.rem 2.4)
       maxWidth (Clay.rem 50)
-    
+      
     ".quote" ? do
       textAlign start
+
       "::selection" & do
         color white
         backgroundColor darkblue
@@ -153,11 +156,21 @@ styles = do
       fontFamily ["Libertinus Italic"] []
       textAlign end
       color darkgray
+      
+      "::selection" & do
+        color white
+        backgroundColor darkblue
+      
       a ? do
         color darkblue
+        
         ":hover" & do
           backgroundColor darkblue
           color white
+        
+        "::selection" & do
+          color white
+          backgroundColor darkblue
         
   ".cmd" ? do
     fontFamily ["Lilex"] []
@@ -207,6 +220,10 @@ styles = do
     
   h3 ? do
     fontFamily ["Abordage"] []
+    fontSize (Clay.rem 3)
+    
+  h4 ? do
+    fontFamily ["Latitude"] []
     fontSize (Clay.rem 3)
     
   "#main-content" ? do
@@ -311,6 +328,9 @@ styles = do
     h3 ? do
       fontSize (Clay.rem 1.8)
       
+    h4 ? do
+      fontSize (Clay.rem 1.8)
+      
     ".logo" ? a ? do
       ":hover" & do
         backgroundColor white
@@ -404,6 +424,9 @@ styles = do
       fontSize (Clay.rem 5)
       
     h3 ? do
+      fontSize (Clay.rem 2)
+      
+    h4 ? do
       fontSize (Clay.rem 2)
       
     ".logo" ? a ? do

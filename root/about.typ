@@ -2,78 +2,81 @@
 title: About
 ---
 
-== Contact
+If you came here to learn more about the _site_ itself, then you probably want to take a look at the #link("/colophon/")[colophon].
+This page is an introduction to _me_ (not my website).
+Though there's a section here devoted to my academic interests, if you're looking for information about my formal academic background and my thoughts on education, you should visit the #link("/academics/")[academics] page instead.
 
-=== Email
+I spend most of my time working at the intersection of theoretical computer science and mathematics.
+I'm particularly fascinated by #link("https://ncatlab.org/nlab/show/category+theory")[category theory] (often referred to as "general abstract nonsense"---not to be confused with #link("https://concretenonsense.wordpress.com/")[_concrete_ nonsense]) and the powerful structures it gives us to describe the universe.
+While category theory is often dismissed as meaningless garbage, I subscribe to the #link("https://ncatlab.org/nlab/show/nPOV")[higher structures point of view] (popularized as the $n$POV in the #link("https://ncatlab.org/")[nLab] as a play on Wikipedia's "neutral point of view"#[]), which posits that categorical algebra and related subjects have profound applications in a wide variety of fields.
 
-I respond to email semi-regularly, though during the middle of the semester I might delay responding (for not more than one month) if I don't know you and your message is not particularly urgent.
-Feel free to send me follow up mail if I don't respond, though.
-I don't mind random emails, but if you can, I'd greatly appreciate it if you encrypt your message with my PGP key (this will depend on the email you choose; see below).
-You can also search for my PGP key by email on either the standard #link("https://keys.openpgp.org")[OpenPGP keyserver] or the #link("https://pgp.mit.edu")[MIT keyserver].
-The first of these is much faster!
+I'm a founding member of #link("https://functor.systems")[functor.systems], which investigates categorical structures in computation, along with #link("https://youwen.dev")[Youwen], #link("https://kaitotlex.systems")[Warren], #link("https://rvind.dev")[Arvind], and #link("https://github.com/nluo923")[Nicholas].
+At MIT, I created the #link("https://www.mit.edu/~ajzd/opencompute/")[OpenCompute Laboratory] (stylized OCλ) with #link("https://github.com/anthonysdone")[Anthony] to explore these themes in greater detail and apply categorical logic to the formal verification of low-level systems.
+I also have the great opportunity to work in the #link("https://zardini.mit.edu/")[Zardini Lab] on #link("https://applied-compositional-thinking.engineering/")[co-design], a branch of applied category theory that deals with problems involved in the design of complex heterogeneous systems.
+This is my primary research focus at the moment.
 
-If you don't know how to encrypt email with PGP, #link("https://www.openpgp.org/software/")[this page] gives a good overview of applications that support encryption and how to enable it.
-I personally use #link("https://www.thunderbird.net/")[Thunderbird], which is free software, for #link("https://support.mozilla.org/en-US/kb/introduction-to-e2e-encryption")[encryption].
+#sym.ast.triple
 
-I have several email addresses, and I check all of them at once, so it doesn't really matter which one you use to contact me.
-For #link("https://en.wikipedia.org/wiki/Complete_metric_space")[completeness], I list all addresses I check for external mail here:
+I'm fascinated by a wide variety of subjects that I see as tackling difficult and profound questions through logical and axiomatic examination.
+This typically involves a lot of math, but not always.
+Some topics in fields outside mathematics and computer science that I find inspiring:
 
-- #link("mailto:ananth@monadi.cc")[`ananth@monadi.cc`]
-  - That's the primary address affiliated with #link("https://monadi.cc")[this website].
-  - Use this #link("https://keys.openpgp.org/search?q=ananth%40monadi.cc")[PGP key]
-- #link("mailto:ananth@functor.systems")[`ananth@functor.systems`]
-  - I've obtained this custom address (also #link("/colophon#financial-disclosures")[rent-free]) as a member of #link("https://functor.systems")[functor.systems].
-    I use it primarily for technical discussions with other hackers.
-  - Use this #link("https://keys.openpgp.org/search?q=ananth%40functor.systems")[PGP key]
-- #link("mailto:ananthv@mit.edu")[`ananthv@mit.edu`]
-  - This is my primary academic address, affiliated with #link("https://web.mit.edu")[MIT].
-    At the Institute, it's customary to refer to either the first part of this address (`ananthv`) or the full address as a "kerb", short for #link("https://web.mit.edu/kerberos/")[Kerberos], which is a custom secure communication protocol for internet services developed at MIT and still used for personal authentication.
-  - Use this #link("https://keys.openpgp.org/search?q=ananthv%40mit.edu")[PGP key]
+- #link("https://en.wikipedia.org/wiki/Analytical_mechanics")[Analytical mechanics]
+  - #link("https://static.uni-graz.at/fileadmin/_Persoenliche_Webseite/maas_axel/Keusch_Bachelor.pdf")[Viktoria Keusch's thesis] on a categorical interpretation of classical mechanics is particularly fascinating
+  - I've been meaning to read #link("https://pierre.ag.gerard.web.ulb.be/textbooks/books/Physics_from_Symmetry.pdf")[Physics from Symmetry] for a while, but unfortunately haven't had the time to devote to it yet
+- #link("https://plato.stanford.edu/entries/social-choice/")[Social choice theory] and related themes in #link("https://en.wikipedia.org/wiki/Political_economy")[political economy]
+  - I was initially interested in social choice theory because of #link("https://sites.google.com/site/wesholliday/")[Prof. Holliday] and #link("https://pacuit.org/")[Prof. Pacuit's] work on the #link("https://arxiv.org/abs/2108.00542")[Stable Voting] algorithm
+    - By the way, did you know Prof. Holliday's colleague in Berkeley's philosophy department #link("https://johnmacfarlane.net/")[John MacFarlane] is the creator of #link("https://github.com/jgm/pandoc")[Pandoc], probably the most popular Haskell application ever developed
+  - There are (unsurprisingly) #link("https://mathematics-democracy-institute.org/category-theoretic-approach-to-social-choice-theory/")[connections to category theory], though I've not looked too deeply into this yet
+  - In a more unexpected direction, there's a lot of work on #link("https://www.sciencedirect.com/science/article/pii/S0165176523004731")[topological approaches to social choice] that I'm particularly fascinated by
+  - The "related themes in political economy" part is a bit vague, but generally I'm most interested in theoretical models of democratic decision-making; this tends to involve a lot of game theory (see below)
+- #link("https://en.wikipedia.org/wiki/Game_theory")[Game theory]
+  - The foundations of microeconomics and also an extremely applied field involving some #link("https://www.uni-bamberg.de/fileadmin/uni/fakultaeten/sowi_faecher/vwl/BERG/BERG_191.pdf")[very beautiful mathematics]
+  - I don't have much to say about this yet, mainly because I'm still not very familiar with the subject
+- #link("https://en.wikipedia.org/wiki/Linguistics")[Linguistics], especially #link("https://en.wikipedia.org/wiki/Semantics")[semantics]
+  - I like learning languages, and linguistics truly makes you question everything you thought (or didn't think) about the fundamental structure of language itself
+  - I've been told there's a lot of overlap between #link("https://oxfordre.com/linguistics/display/10.1093/acrefore/9780199384655.001.0001/acrefore-9780199384655-e-329")[semantics and type theory], though I haven't yet explored the connection myself
+- Philosophy, especially #link("https://en.wikipedia.org/wiki/Modal_logic")[modal logic] and #link("https://en.wikipedia.org/wiki/Epistemology")[epistemology]
+  - Modal logic is a very analytical branch of philosophy that has a lot to do with specifying axioms in mathematics
+  - As you might imagine, there's #link("https://golem.ph.utexas.edu/category/2011/04/category_theoretic_modal_logic.html")[a lot of category theory involved]
+    - There's an #link("https://projecteuclid.org/ebooks/books-by-independent-authors/Topoi-The-Categorial-Analysis-of-Logic/toc/bia/1403013939")[entire book] on the subject actually, recommended to me by #link("https://wesholliday.net")[Prof. Holliday]
+  - Lately I've also decided I should take a look at the following two texts, as they seem to be widely embraced by category theorists worldwide (see #link("https://dspivak.net/ValuesStatement.pdf")[Spivak's values statement] and the canonical #link("https://ncatlab.org/nlab/show/category+of+being")[category of being]):
+    - The #link("https://en.wikipedia.org/wiki/Tao_Te_Ching")[_Tao Te Ching_] by Lao Tzu, an ancient Chinese text tackling questions in metaphysics and unraveling the fundamental laws of the universe
+    - Georg Wilhelm Friedrich Hegel's #link("https://www.marxists.org/reference/archive/hegel/works/sl/slbeing.htm")[_Doctrine of Being_], the first part of the first volume of the larger #link("https://en.wikipedia.org/wiki/Science_of_Logic")[_Science of Logic_], which deals with the natural foundations of logic and introduces the ideas of _being_ and _becoming_
 
-=== Matrix 
+If you're interested in any of these subjects, feel free to #link("/contact/")[contact me]\; I'm always happy to discuss these topics with other people.
 
-The great thing about Matrix is that it's easy to setup end-to-end encryption without complicated key exchanges.
-You can learn more about encryption on the Matrix in #link("https://matrix.org/docs/matrix-concepts/end-to-end-encryption/")[this article].
-I have two Matrix accounts in separate #link("https://matrix.org/ecosystem/servers/")[homeservers], listed below:
+#sym.ast.triple 
 
-- #link("https://matrix.to/#/@q9i:functor.systems")[`@q9i:functor.systems`]
-  - This is my personal account, affiliated with the #link("https://functor.systems")[functor.systems] homeserver.
-- #link("https://matrix.to/#/@ananthv:matrix.mit.edu")[`@ananthv:matrix.mit.edu`]
-  - This is my MIT-affiliated Matrix account.
-    The homeserver is graciously maintained by the #link("https://sipb.mit.edu/projects/#mit-matrix")[Student Information Processing Board] (SIPB) under project Uplink.
+When I'm not involved in these intellectual distractions, I spend my time hacking on #link("https://www.gnu.org/philosophy/free-sw.en.html")[free and open source software].
+I have strong beliefs about software freedom---the idea that software should be distributed without restriction and be free to modify, inspect, study, and redistribute.
+I think that such a philosophy leads to software that's developed in the public interest and a more open, accessible society for all.
+These views---and the definition of free software (free as in freedom---the "free" in "free speech", not "free" as in "free beer")---might seem strange if it's your first time hearing about this.
+#link("https://www.gnu.org/philosophy/fsfs/rms-essays.pdf")[Stallman's essays on the subject] are a good introduction to why we should care about such things.
 
-=== Other Communication
+Every hacker has a tool that they wield best.
+Mine is #link("https://www.haskell.org/")[Haskell], the language of thought.
+It's a programming language designed by #link("https://dl.acm.org/doi/10.1145/1238844.1238856")[mathematicians], not computer "scientists" or engineers.
+As a result, it's #link("https://www.reddit.com/r/functionalprogramming/comments/13cnx5e/what_is_monad/")[notoriously difficult] to learn, but when used well, it's #link("https://ucsd-progsys.github.io/liquidhaskell/")[surprisingly powerful].
 
-I have what proprietary software enthusiasts may describe as a more "normal" communication platform, Discord, but I prefer not to use it, even though I use a #link("https://vesktop.dev/")[free-as-in-freedom frontend] for it.
-If you really want to communicate via Discord, please contact me via email first (unencrypted is fine).
+As a Haskell user, I am obliged to tell you two things.
+The first is that I must demonstrate moral superiority by insisting you #link("https://theory.stanford.edu/~blynn/haskell/why.html")[learn Haskell as well].
+Just keep in mind that you will spend most of your time #link("https://www.youtube.com/shorts/LGZKXZQeEBg")[writing whitepapers].
+Second, I must warn you that I #link("https://markkarpov.com/post/lisp-and-haskell")[despise Lisp users], and so does the rest of the Haskell community, owing to differences in our preference for static types, #link("https://news.ycombinator.com/item?id=24031376")[among other things].
 
-I also use #link("https://signal.org/")[Signal], but I don't publicly disclose my username for privacy reasons.
-If we need to communicate directly, Signal is almost certainly the best option, but please contact me via email or Matrix first.
+#linebreak()
 
-If you want to mail me a physical letter or other artifact, please reach out via email first so I know what to expect.
+#figure(caption: [The axis of evil plotting to destroy the Republic of Haskell, #link("https://medium.com/this-is-not-a-monad-tutorial/interview-with-jesper-louis-andersen-about-erlang-haskell-ocaml-go-idris-the-jvm-software-and-b0de06440fbd#.4g3pauyxq")[_source_]])[
+  #image("/images/haskell-vs-lisp.webp", width: 90%)
+]
 
-=== Git Forges
+#linebreak()
 
-A while ago I used to be a GitHub enthusiast.
-Concerns about #link("https://unixdigest.com/articles/why-is-your-open-source-project-still-hosted-on-github.html")[free software] and the platform's weaponization to support #link("https://medium.com/@noazureforapartheid/microsoft-powers-ice-why-doesnt-microsoft-want-to-talk-about-its-contracts-with-immigration-and-bc04fae8d43b")[concentration camps] have led me to consider self-hosted alternatives.
-While the latter concern might be particularly acute for GitHub specifically, corporate alternatives such as GitLab and Bitbucket present a major threat to software freedom worldwide.
-I use the term "git forge" to refer more generally to a web platform for hosting and exploring Git repositories.
+Part of the great illusion perpetuated by today's hackers is the idea that programming is inherently about translating instructions into a form that can be understood by a computer.
+This is _coding_ (#link("https://en.wikipedia.org/wiki/Code_(cryptography)")[not the intellectual kind]) and has nothing to do with hacking (or as laypeople refer to it, programming).
+Instead, the #link("https://wiki.haskell.org/Curry-Howard-Lambek_correspondence")[Curry--Howard--Lambek correspondence] tells us that writing a program is equivalent to putting together a mathematical proof.
+This might sound strange at first, but what it's really saying is that, in order for your program to be useful, you must mathematically prove that it has the desired properties.
+Thus, there really is no distinction at all between the most applied domains in computer science and the realm of abstract mathematics.
 
-I still maintain a #link("https://github.com/quantum9Innovation")[presence on GitHub], but I rarely use it nowadays, so don't be surprised if you see I've stopped creating new repositories and developing code---it's merely that I've moved to a different platform.
-The main reason I've maintained my GitHub account is because it continues to be the largest platform for collaborative development on open-source projects.
-
-The main forges I use are:
-
-- #link("https://code.functor.systems/q9i/")[`code.functor.systems/q9i`]
-  - I now spend most of my time on #link("https://functor.systems/code")[code.functor.systems], which is a self-hosted instance for the #link("https://functor.systems")[functor.systems] team and friends.
-    Most of my new repositories will be uploaded here.
-  - This instance is #link("https://forgejo.org/")[Forgejo]-based
-
-- #link("https://forgejo.mit.edu/ananthv")[`forgejo.mit.edu/ananthv`]
-  - Thanks to #link("https://sipb.mit.edu/")[SIPB], I also have access to the free and publicly accessible #link("https://forgejo.mit.edu/explore")[MIT forge].
-    I primarily use this for maintaining MIT-related projects, such as those developed under the auspices of the #link("https://forgejo.mit.edu/OCL")[OpenCompute Laboratory] (stylized OCλ).
-  - This instance is #link("https://forgejo.org/")[Forgejo]-based
-  
-=== #smallcaps("ORCID")
-
-If you need to verify my identity as an author for whatever reason, my ORCID is #link("https://orcid.org/0009-0003-9165-4690")[0009-0003-9165-4690].
+I use a custom NixOS derivative called #link("https://functor.systems/functorOS")[functorOS] that I maintain collectively with other Nix hackers at #link("functor.systems")[functor.systems].
+There's a lot to say about that, so I'll leave it to another page on #link("/computing/")[how I do my computing].
