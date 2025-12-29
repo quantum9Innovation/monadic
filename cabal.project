@@ -2,3 +2,9 @@ packages: .
 
 constraints:
   zlib +bundled-c-zlib
+
+source-repository-package
+  type: git
+  location: https://github.com/binary-star-systems/liquidhaskell
+  tag: 16e1d564f9bcc82f03d8dc4fa7bdb1c55a4fe3a1
+  --sha256: H6iD/X4TPpJYHd8rREil8p0ssS6hvJ7TQr+cWMDkets=

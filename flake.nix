@@ -29,6 +29,12 @@
         overlays = [
           haskellNix.overlay
           (final: _prev: {
+            haskell-nix = _prev.haskell-nix // {
+              extraPkgconfigMappings = _prev.haskell-nix.extraPkgconfigMappings // {
+                # string pkgconfig-depends names are mapped to lists of nixpkgs package names
+                "z3" = [ "z3" ];
+              };
+            };
             hixProject = final.haskell-nix.hix.project {
               src = ./.;
             };
@@ -91,41 +97,9 @@
           };
         };
 
-        devShells = {
-          default =
-            let
-              buildInputs = builtins.concatStringsSep " " [
-                "liquidhaskell"
-                "liquid-prelude"
-                "liquid-vector"
-                "text"
-                "hakyll"
-                "filepath"
-                "clay"
-                "process"
-              ];
-              flags = builtins.concatStringsSep " " (
-                map (ext: "-X${ext}") [
-                  "DerivingStrategies"
-                  "OverloadedStrings"
-                  "MultilineStrings"
-                ]
-              );
-              dir = "src";
-              main = "${dir}/Main.hs";
-            in
-            flake.devShells.default.overrideAttrs (_: {
-              shellHook = ''
-                alias install-liquid='cabal install --lib ${buildInputs} --package-env . --force-reinstalls'
-                alias liquid='ghc -fplugin=LiquidHaskell -isrc ${main} ${flags}'
-                alias watch-liquid='watchexec -r -e hs "ghc -fplugin=LiquidHaskell -isrc ${main} ${flags}"'
-              '';
-            });
-
-          runner = nixpkgs.legacyPackages.${system}.mkShell {
-            buildInputs = self.checks.${system}.pre-commit-check.enabledPackages;
-            inherit (self.checks.${system}.pre-commit-check) shellHook;
-          };
+        devShells.runner = nixpkgs.legacyPackages.${system}.mkShell {
+          buildInputs = self.checks.${system}.pre-commit-check.enabledPackages;
+          inherit (self.checks.${system}.pre-commit-check) shellHook;
         };
 
         legacyPackages = pkgs;

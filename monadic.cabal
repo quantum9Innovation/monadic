@@ -36,6 +36,7 @@ executable monadic
 
   build-depends:
     base,
+    liquidhaskell,
     filepath,
     hakyll,
     text,
