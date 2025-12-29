@@ -129,6 +129,8 @@ styles = do
     minWidth (pct 100)
     width (px 0)
     overflowX auto
+    paddingTop (Clay.rem 1)
+    paddingBottom (Clay.rem 1)
 
   figure ? do
     display block
@@ -155,6 +157,12 @@ styles = do
     fontSize (Clay.rem 2.1)
     maxWidth (Clay.rem 70)
     color black
+    
+  li ? do
+    fontFamily ["Libertinus"] []
+    fontSize (Clay.rem 2.1)
+    maxWidth (Clay.rem 70)
+    color black
 
   a ? do
     color deepblue
@@ -172,6 +180,11 @@ styles = do
     paddingLeft (Clay.rem 1)
 
     p ? do
+      fontFamily ["Libertinus"] []
+      fontSize (Clay.rem 2.4)
+      maxWidth (Clay.rem 50)
+      
+    li ? do
       fontFamily ["Libertinus"] []
       fontSize (Clay.rem 2.4)
       maxWidth (Clay.rem 50)
@@ -372,6 +385,9 @@ styles = do
 
     p ? do
       fontSize (Clay.rem 1.5)
+      
+    li ? do
+      fontSize (Clay.rem 1.5)
 
     ".subtitle" ? do
       width (pct 100)
@@ -469,6 +485,9 @@ styles = do
       fontSize (Clay.rem 2)
 
     p ? do
+      fontSize (Clay.rem 1.8)
+      
+    li ? do
       fontSize (Clay.rem 1.8)
 
     "#main-content" ? do

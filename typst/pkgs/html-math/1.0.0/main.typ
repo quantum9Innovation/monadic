@@ -24,16 +24,23 @@
     }
   }
   
+  body
+}
+
+#let math-figure(body) = {
   show figure: it => context {
     if target() == "html" {
-      html.elem("figure", {
-        html.frame(it.body)
-        it.caption
-      })
+      html.elem(
+        "figure",
+        {
+          html.frame(it.body)
+          it.caption
+        }
+      )
     } else {
       it
     }
   }
-
+  
   body
 }
