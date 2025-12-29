@@ -78,8 +78,8 @@ generateSite = hakyll $ do
     make pandocCompiler
     
   match "root/*.typ" $ do
-      reroute toRootHTML
-      make pandocCompiler
+    reroute toRootHTML
+    make (makeCompiler typstProcessor)
   
   match "templates/*" $ compile templateBodyCompiler
 

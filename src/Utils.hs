@@ -4,6 +4,7 @@ import Constants
 import Types
 
 import Hakyll
+import System.Process (readProcess)
 import System.FilePath ((</>), takeDirectory, takeFileName, takeBaseName)
 
 postContext :: Context String
@@ -41,6 +42,15 @@ sameRoute = route idRoute
 
 reroute :: (FilePath -> FilePath) -> Rules ()
 reroute f = route $ customRoute $ f . toFilePath
+
+makeCompiler :: (String -> IO String) -> Compiler (Item String)
+makeCompiler f = do
+  body <- getResourceBody
+  transformed <- unsafeCompiler $ f (itemBody body)
+  makeItem transformed
+  
+typstProcessor :: String -> IO String
+typstProcessor = readProcess "typst" ["compile", "-", "--format", "html", "-", "--features", "html"]
 
 -- take e.g. root/abc.md -> /abc/index.html
 toRootHTML :: FilePath -> FilePath

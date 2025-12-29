@@ -29,3 +29,14 @@ They're kind of like this page: a collection of items, usually links, but someti
   - This has all my main contact information along with links to profiles I maintain across the internet.
 - [People](/people/)
   - [functor.systems](https://functor.systems/) has promised to create a commutative webring of its members at `ring.functor.systems`, but, pending the completion of that arduous project, I've put together a webring of my own (sadly it doesn't [commute](https://en.wikipedia.org/wiki/Commutative_ring)). This page is a collection of links to other people's personal sites that I find interesting.
+  
+## Philosophy
+
+Somewhat blog post-like in style, but with less of a focus on a particular concept or idea.
+Here, I opt for more general philosophical discussions about broader themes.
+Most of these pages elaborate on what's discussed in the [about](/about/) page.
+
+- [Academics](/academics/)
+  - I detail my formal and informal academic background and pursuits, with some discussion about what I've learned and links to relevant resources
+- [How I do my computing](/computing)
+  - This is a reference to Richard Stallman's legendary [How I do my computing](https://stallman.org/stallman-computing.html) page. My opinions may not be as serious, and my software is certainly not as dated.

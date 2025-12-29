@@ -1,0 +1,7 @@
+[package]
+name = "html-math"
+version = "1.0.0"
+entrypoint = "main.typ"
+description = "Adds support for HTML-based math rendering"
+authors = ["Ananth Venkatesh <ananth@monadi.cc>"]
+license = "GPLv3"

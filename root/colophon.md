@@ -145,8 +145,8 @@ Ok, enough distractions.
 ### Computer Modern
 
 The quintessential typeface for mathematics.
-I don't use it for prose, opting for Libertinus Serif instead, but few fonts can match the elegance of Computer Modern when it comes to mathematical symbols in all their glory.
-I opted for the conventional and elegant, though archaic, Computer Modern for this purpose.
+I don't use it for prose, opting for Libertinus Serif instead, but few fonts can match its elegance when it comes to mathematical symbols in all their glory.
+I thus opted for the conventional and elegant, though archaic, Computer Modern for this purpose.
 It was created by [Donald Knuth](https://en.wikipedia.org/wiki/Donald_Knuth) and served as the basis for TeX and later LaTeX's mathematical typesetting systems.
 Knuth, one of the most famous theoretical computer scientists of the century, is also the author of the famous [_Art of Computer Programming_ book](https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming) and no stranger to the art of typesetting.
 

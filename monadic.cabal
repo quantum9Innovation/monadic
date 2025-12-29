@@ -39,12 +39,14 @@ executable monadic
     filepath,
     hakyll,
     text,
-    clay
+    clay,
+    process
 
   default-language: GHC2024
   default-extensions:
     DerivingStrategies
     OverloadedStrings
+    MultilineStrings
 
   if flag(threaded)
     ghc-options:
@@ -53,3 +55,4 @@ executable monadic
       -with-rtsopts=-N
       -XDerivingStrategies
       -XOverloadedStrings
+      -XMultilineStrings

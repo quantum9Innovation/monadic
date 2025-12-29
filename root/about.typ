@@ -2,6 +2,9 @@
 title: About
 ---
 
+#import "@preview/html-math:1.0.0": * 
+#show: html-math
+
 If you came here to learn more about the _site_ itself, then you probably want to take a look at the #link("/colophon/")[colophon].
 This page is an introduction to _me_ (not my website).
 Though there's a section here devoted to my academic interests, if you're looking for information about my formal academic background and my thoughts on education, you should visit the #link("/academics/")[academics] page instead.

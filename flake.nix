@@ -39,6 +39,15 @@
           inherit (haskellNix) config;
         };
         flake = pkgs.hixProject.flake { };
+
+        typst = pkgs.typst.withPackages (
+          p: with p; [
+            fletcher_0_5_8
+            cetz_0_4_2
+            oxifmt_0_2_1
+            self.packages.${system}.html-math
+          ]
+        );
       in
       flake
       // {
@@ -93,11 +102,13 @@
                 "hakyll"
                 "filepath"
                 "clay"
+                "process"
               ];
               flags = builtins.concatStringsSep " " (
                 map (ext: "-X${ext}") [
                   "DerivingStrategies"
                   "OverloadedStrings"
+                  "MultilineStrings"
                 ]
               );
               dir = "src";
@@ -119,7 +130,42 @@
 
         legacyPackages = pkgs;
         packages = flake.packages // {
-          default = flake.packages."monadic:exe:monadic";
+          monadic-unwrapped = flake.packages."monadic:exe:monadic";
+          monadic = pkgs.stdenvNoCC.mkDerivation {
+            name = "monadic";
+            src = self.packages.${system}.monadic-unwrapped;
+            nativeBuildInputs = [ pkgs.makeWrapper ];
+            installPhase = ''
+              install -Dm755 ./bin/monadic $out/bin/monadic
+              wrapProgram $out/bin/monadic \
+                --prefix PATH : ${pkgs.lib.makeBinPath [ typst ]}
+            '';
+          };
+          site = pkgs.stdenvNoCC.mkDerivation {
+            name = "site";
+            src = ./.;
+            nativeBuildInputs = [ self.packages.${system}.monadic ];
+            
+            LANG = "en_US.UTF-8";
+            LOCALE_ARCHIVE = pkgs.lib.optionalString (
+              pkgs.stdenv.buildPlatform.libc == "glibc"
+            ) "${pkgs.glibcLocales}/lib/locale/locale-archive";
+
+            buildPhase = ''
+              monadic build
+            '';
+            installPhase = ''
+              mkdir -p $out
+              mv ./_site/* $out
+            '';
+          };
+          
+          default = self.packages.${system}.monadic;
+          html-math = pkgs.buildTypstPackage {
+            pname = "html-math";
+            version = "1.0.0";
+            src = ./typst/pkgs/html-math/1.0.0;
+          };
         };
       }
     );
