@@ -48,6 +48,9 @@ executable monadic
     DerivingStrategies
     OverloadedStrings
     MultilineStrings
+  
+  ghc-options:
+    -fplugin=LiquidHaskell
 
   if flag(threaded)
     ghc-options:
@@ -57,3 +60,4 @@ executable monadic
       -XDerivingStrategies
       -XOverloadedStrings
       -XMultilineStrings
+      -fplugin=LiquidHaskell
