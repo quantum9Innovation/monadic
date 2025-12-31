@@ -44,3 +44,21 @@
   
   body
 }
+
+#let hquote(body, attr) = {
+  html.elem(
+    "blockquote",
+    {
+      html.elem(
+        "p",
+        attrs: (class: "quote"),
+        { body }
+      )
+      html.elem(
+        "p",
+        attrs: (class: "attr"),
+        { [---] + attr }
+      )
+    }
+  )
+}

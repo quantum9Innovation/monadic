@@ -33,6 +33,67 @@ The gist of it is that you can take both for-credit and non-credit courses (many
 
 == Fall 2025
 
+- ES.200 ESG Undergraduate Teaching
+
+  - This is the ESG teaching seminar.
+    It's required of all first-time teaching assistants---this was my first semester as a TA for #link("es1802")[ES.1802], which I thoroughly enjoyed.
+    Teaching is significantly more difficult than I expected, and there is actually quite a lot of research into pedagogy that I was previously not aware of.
+    The main textbook we used is #link("https://ocw.mit.edu/courses/res-18-004-the-torch-or-the-firehose-a-guide-to-section-teaching-spring-2009/")[_The Torch or the Firehose_], which is a delightfully entertaining guide to teaching a recitation section, written by former MIT mathematics professor #link("https://en.wikipedia.org/wiki/Arthur_Mattuck")[Arthur Mattuck].
+    I would highly recommend it to anyone interested in teaching, specifically in a university setting.
+
+#html.elem("div", attrs: (id: "18701"))[]
+
+- #link("https://ocw.mit.edu/courses/18-701-algebra-i-fall-2010/")[18.701] Algebra Ⅰ
+
+  - This class is highly nontrivial.
+    Definitely the most challenging class I took this semester.
+    The title is hilariously misleading, though if you add the word "abstract" to the beginning, it's actually quite accurate.
+    We study the fundamentals of group theory and linear algebra, along with the connections between them.
+    I think the traditional introduction to modern mathematics separates these two topics, but they are fundamentally connected, and studying them in a single course allows you to go back and forth between analogous ideas in the two subjects.
+    I took this class with #link("https://cohn.mit.edu/")[Prof. Cohn], who is an especially engaging lecturer.
+    He jokingly suggested that #link("https://thesneeze.com/none-pizza-left-beef/")[rotating pizza] (none pizza with left beef, anyone?) using the orientation-preserving symmetries of the plane, $"SO"_2(RR)$, is the greatest application of what we've learned, and that's honestly not far from the truth.
+    The subject matter is mind-bendingly abstract, but it's also foundational to a whole host of more applied domains, where fundamental universal structures like groups and linear transformations serve as a natural language for describing problems in applied mathematics.
+
+- #link("https://ocw.mit.edu/courses/18-100b-real-analysis-spring-2025/")[18.100B] Real Analysis
+
+  - I was lucky enough to take this class with #link("https://math.mit.edu/directory/profile.html?pid=1461")[Prof. Guth], whose lecture notes helped elucidate the key ideas behind analysis.
+    We study the great proofs---right and wrong---of the main theorems in calculus, and then develop the tools to understand and apply them.
+    The latter half of the class lies mostly outside the realm of traditional single-variable calculus---we touch on the ideas of completeness and compactness in general metric spaces.
+    It's an excellent training in pre-#link("https://ocw.mit.edu/courses/18-901-introduction-to-topology-fall-2004/")[topology], if that exists.
+    The last lectures survey a collection of fascinating topics in Fourier analysis, differential equations, and calculus of variations.
+
+- #link("https://ocw.mit.edu/courses/14-770-introduction-to-political-economy-fall-2017/")[14.770] Introduction to Political Economy
+
+  - By far one of the most intellectual classes I've taken at MIT.
+    The class is divided into an exploration of two distinct focus areas: theory, covered by #link("https://economics.mit.edu/people/faculty/alexander-wolitzky")[Prof. Wolitzky], and empirics, covered by #link("https://economics.mit.edu/people/faculty/abhijit-banerjee")[Prof. Banerjee].
+    I'm of course partial to theory, but both these concepts complement each other well.
+    We cover the fundamental ideas of political economy, starting with the standard introduction to social choice and ending with a survey of current research into identity politics and political agency (e.g. the effects of protests and revolutions on shaping policy and national outcomes).
+    We of course survey a great many empirical studies which test theoretical predictions, like the #link("https://en.wikipedia.org/wiki/Median_voter_theorem")[median voter theorem], against the reality of local and national politics across the world.
+    I came into the class mostly interested in social choice theory, but I've realized there's so much more to political economy that makes the field such a rich area of study.
+    We also use a fair amount of game theory, the economist's fundamental mathematical tool, to explain #link("https://www.kellogg.northwestern.edu/faculty/fedderse/homepage/papers/jury.pdf")[sometimes baffling results].
+
+- #link("https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/")[6.1200] Mathematics for Computer Science
+
+  - Essentially your standard introduction to the dark arts of discrete mathematics.
+    This is of course proof-based, but the relevant proofs are not all that complicated.
+    There are a great many tricks you learn for handling common classes of mathematical problems in computer science.
+    A lot of the material, however, is trivialized by more advanced mathematics, like #link("#18701")[abstract algebra] and #link("#1044")[category theory].
+    
+  - All of my problem set submissions, which run the gamut from trivial hacks to complicated algebraic sleight of hand, can be found in #link("https://code.functor.systems/q9i/6.1200")[this repository].
+
+#html.elem("div", attrs: (id: "1044"))[]
+    
+- #link("https://zardini.mit.edu/act4ed/")[1.044] Applied Category Theory for Engineering Design
+
+  - Most people don't know what category theory is, and of those who do, the majority can't even fathom what _applied_ category theory is.
+    This class is perhaps the best introduction at MIT to category theory and applied category theory in particular.
+    Most of the content covered was directly related to my work as a #link("https://urop.mit.edu/")[UROP] in the #link("https://zardini.mit.edu/")[Zardini Lab].
+    The fun part is the second half of the course, which is a combination of guest lectures (#link("https://petar-v.com/")[Petar Veličković]'s talk on #link("https://geometricdeeplearning.com/")[geometric deep learning] was particularly insightful) and a final project.
+    
+  - The best part of this class is the final project, where we worked to apply #link("https://applied-compositional-thinking.engineering/")[co-design] to modeling some real-world challenge (the "applied" in "applied category theory").
+    I worked with #link("https://nscheuer.github.io/")[Niclas Scheuer] on modeling planetary defense systems with co-design under Project Blue Dome.
+    The results of this technical study, which involved several #link("https://wiki.haskell.org/Thunk")[thunks] of Haskell that created a templating metalanguage for #link("https://editor.zuper.ai/editor/")[MCDP], are publicly available in #link("https://code.functor.systems/q9i/blue-dome")[this repository].
+
 == Spring 2025
 
 - ES.S30 Many Interesting Things
@@ -44,7 +105,7 @@ The gist of it is that you can take both for-credit and non-credit courses (many
 
 - #link("https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/")[ES.8022] Physics Ⅱ: Electricity and Magnetism
 
-  - Given my experience with #link("#8012")[8.012], I was expecting this class to be unfathomably difficult---I wasn't completely wrong, but it turned out to be conceptually simpler than 8.012 in many ways.
+  - Given my experience with #link("#8012")[8.012], I was expecting this class to be unfathomably difficult---I wasn't completely wrong, but it turned out to be conceptually simpler than #link("#8012")[8.012] in many ways.
     We talk a lot about symmetry and applications of Stokes Theorem and therefore mostly deal with very nice, idealized problems.
     Think of the #link("https://en.wikipedia.org/wiki/Spherical_cow")[spherical cow].
     The fundamental physical concepts at play here are deceptively simple, and it takes a lot of work to truly understand what's going on---I'm not even sure I do completely (see #link("#8223")[my thoughts on 8.223] for more about this point).
@@ -89,7 +150,7 @@ The gist of it is that you can take both for-credit and non-credit courses (many
 
 - ES.S20 Group Theory Seminar
 
-  - This was a quick introduction to group theory taught as a seminar in ESG, touching on many fundamental concepts that I would later uncover in greater depth when taking #link("https://ocw.mit.edu/courses/18-701-algebra-i-fall-2010/")[18.701] Algebra Ⅰ.
+  - This was a quick introduction to group theory taught as a seminar in ESG, touching on many fundamental concepts that I would later uncover in greater depth when taking #link("#18701")[18.701] Algebra Ⅰ.
     Working through some of the problems in this class showed me that group theory can become quite nontrivial very quickly, and also that there's a lot of overlap between group theory and number theory---two fields I would not have expected to be related at all.
     In some ways, this is the beauty of mathematics---abstract structures are fundamentally related to each other, and branches of mathematics do not exist in isolation.
 
@@ -97,16 +158,14 @@ The gist of it is that you can take both for-credit and non-credit courses (many
     
 - #link("https://ocw.mit.edu/courses/8-223-classical-mechanics-ii-january-iap-2017/")[8.223] Classical Mechanics Ⅱ
 
-  - Probably the best follow-up class to 8.012.
-    It was still difficult, but noticeably less so compared to 8.012.
+  - Probably the best follow-up class to #link("#8012")[8.012].
+    It was still difficult, but noticeably less so compared to #link("#8012")[8.012].
     I think the mathematical elegance of the Lagrangian/Hamiltonian formalism allowed me to tackle significantly more complex problems with equally more powerful machinery.
     Lagrangians and Hamiltonians are the basic building blocks of modern physics, and applicable well beyond classical mechanics, but this class made me realize that classical mechanics in and of itself is a deeply interesting field of study.
     Physicists will almost certainly disagree with me, but I stand by this opinion so much so that I feel compelled to take #link("https://ocw.mit.edu/courses/8-09-classical-mechanics-iii-fall-2014/")[8.09], or Classical Mechanics Ⅲ, at some point in the future.
     The final thing I remember from this class is the quote:
     
-    #quote()[Before I came here, I was confused about this subject. Having listened to your lecture, I am still confused---but on a higher level.]
-    
-    ---#link("https://en.wikipedia.org/wiki/Enrico_Fermi")[Enrico Fermi]
+    #hquote()[Before I came here, I was confused about this subject. Having listened to your lecture, I am still confused---but on a higher level.][#link("https://en.wikipedia.org/wiki/Enrico_Fermi")[Enrico Fermi]]
     
     which just about sums up my current understanding of physics.
 
@@ -123,6 +182,8 @@ The gist of it is that you can take both for-credit and non-credit courses (many
     My experience in #link("https://ocw.mit.edu/courses/8-223-classical-mechanics-ii-january-iap-2017/")[8.223] made me realize I may have suffered for nothing, as classical mechanics is _so much easier_ when treated from a Lagrangian/Hamiltonian perspective.
     But without a proper grounding in Newtonian mechanics, I don't think I would have the same appreciation for physics as I do now.
 
+#html.elem("div", attrs: (id: "es1802"))[]
+    
 - #link("https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/")[ES.1802] Multivariable Calculus
 
   - This is the last class in the required calculus sequence of the GIRs, which I took in ESG.

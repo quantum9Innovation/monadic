@@ -190,6 +190,7 @@ styles = do
       maxWidth (Clay.rem 50)
 
     ".quote" ? do
+      color offblack
       textAlign start
 
       "::selection" & do
@@ -199,7 +200,7 @@ styles = do
     ".attr" ? do
       fontFamily ["Libertinus Italic"] []
       textAlign end
-      color darkgray
+      color offblack
 
       "::selection" & do
         color white

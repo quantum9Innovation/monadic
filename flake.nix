@@ -97,9 +97,11 @@
           };
         };
 
-        devShells.runner = nixpkgs.legacyPackages.${system}.mkShell {
-          buildInputs = self.checks.${system}.pre-commit-check.enabledPackages;
-          inherit (self.checks.${system}.pre-commit-check) shellHook;
+        devShells = flake.devShells // {
+          runner = nixpkgs.legacyPackages.${system}.mkShell {
+            buildInputs = self.checks.${system}.pre-commit-check.enabledPackages;
+            inherit (self.checks.${system}.pre-commit-check) shellHook;
+          };
         };
 
         legacyPackages = pkgs;
@@ -119,7 +121,7 @@
             name = "site";
             src = ./.;
             nativeBuildInputs = [ self.packages.${system}.monadic ];
-            
+
             LANG = "en_US.UTF-8";
             LOCALE_ARCHIVE = pkgs.lib.optionalString (
               pkgs.stdenv.buildPlatform.libc == "glibc"
@@ -133,7 +135,7 @@
               mv ./_site/* $out
             '';
           };
-          
+
           default = self.packages.${system}.monadic;
           html-math = pkgs.buildTypstPackage {
             pname = "html-math";

@@ -1,12 +1,12 @@
 module Main where
 
 import Constants
-import Utils
 import Style
+import Utils
 
 import Data.Monoid (mappend)
-import System.FilePath (takeFileName)
 import Hakyll
+import System.FilePath (takeFileName)
 
 main :: IO ()
 main = generateSite
@@ -16,27 +16,27 @@ generateSite = hakyll $ do
   match "images/*" $ do
     sameRoute
     compile copyFileCompiler
-    
+
   match "root/favicon.*" $ do
     reroute takeFileName
     compile copyFileCompiler
-    
+
   match "fonts/degheest/fonts/otf/*" $ do
     reroute toFontDir
     compile copyFileCompiler
-    
+
   match "fonts/lilex/otf/*" $ do
     reroute toFontDirSimple
     compile copyFileCompiler
-    
+
   match "fonts/libertinus/*" $ do
     sameRoute
     compile copyFileCompiler
-    
+
   create ["css/style.css"] $ do
     sameRoute
     compile $ makeItem css
-    
+
   match "css/*.css" $ do
     sameRoute
     compile compressCssCompiler
@@ -58,8 +58,8 @@ generateSite = hakyll $ do
       posts <- compilePosts
       let archiveCtx =
             listField postsDir postContext (return posts)
-              `mappend` constField "title" "Archives"
-              `mappend` defaultContext
+              <> constField "title" "Archives"
+              <> defaultContext
 
       hydrate archiveCtx $ makeItem "" >>= loadAndApplyTemplate archiveTemplate archiveCtx
 
@@ -72,15 +72,15 @@ generateSite = hakyll $ do
               `mappend` defaultContext
 
       hydrate indexCtx $ getResourceBody >>= applyAsTemplate indexCtx
-  
+
   match "root/*.md" $ do
     reroute toRootHTML
     make pandocCompiler
-    
+
   match "root/*.typ" $ do
     reroute toRootHTML
     make (makeCompiler typstProcessor)
-  
+
   match "templates/*" $ compile templateBodyCompiler
 
   create ["atom.xml"] $ makeFeed renderAtom

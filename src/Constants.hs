@@ -37,3 +37,6 @@ postTemplate = fromFilePath $ templatesDir </> "post.html"
 
 deepblue :: Color
 deepblue = "#004bfe"
+
+offblack :: Color
+offblack = "#333"
