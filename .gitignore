@@ -5,7 +5,6 @@ src/*
 
 # ---> Hakyll
 _cache
-_site
 
 # ---> Haskell
 dist

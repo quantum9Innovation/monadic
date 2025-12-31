@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+          
+            monadi.cc
+          
+        </title>
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="icon" href="./favicon.svg" />
+    </head>
+    <body>
+        <header>
+            <a href="./" class="image-link"><img src="./images/pfp.png" id="icon" /></a>
+            <div class="logo">
+                <a href="./">
+                  <div id="logo-text">
+                    monadi.cc
+                  </div>
+                </a>
+            </div>
+            <nav>
+                <a href="./explore/">Explore</a>
+                <a href="./about/">About</a>
+                <a href="./colophon/">Colophon</a>
+                <a href="./archive/">Archive</a>
+            </nav>
+        </header>
+
+        <div id="bg"></div>
+        <main role="main">
+            <h1>Monadic. 🌯</h1>
+            <h3>By Ananth Venkatesh <span class="username"><a href="https://code.functor.systems/q9i">@q9i</a><span class="username-tooltip">quantum9innovation</span></span></h3>
+
+<div id="main-content">
+  <p class="subtitle">
+    I hack on <a href="https://functor.systems/functorOS">reproducible systems</a> and study <a href="https://ncatlab.org/nlab/show/general+abstract+nonsense">abstract nonsense</a>.
+    This is my website, blog, and internet real estate (subject to <a href="https://en.wikipedia.org/wiki/Land_value_tax">land value taxation</a> which <a href="./colophon#financial-disclosures">I don't pay for</a>).
+    It's purely functional and <a href="https://code.functor.systems/q9i/monadic">open source</a>.
+  </p>
+  <img src="./images/pfp.png" id="main-image" />
+</div>
+
+<blockquote>
+  <p class="quote">
+    In civilizations without monads, dreams dry up, mutation takes the place of purity and the Rustaceans take the place of Hasklars.
+  </p>
+  <p class="attr">—<a href="https://www.reddit.com/user/lol-no-monads/">Simon Haskal</a></p> 
+</blockquote>
+
+<p style="background-color: rgba(255,0,0,0.2); padding: 10px; border-radius: 10px; width: 70%;">
+  <strong>Heads up!</strong>
+  This site is highly experimental and incomplete.
+  It's slated to replace my old website, which you can view <a href="https://quantum9innovation.github.io">here</a>.
+</p>
+
+<h2 class="cmd">$ whoami</h2>
+<p>
+  The Ancient Greek playwright Euripides once said: &ldquo;Every man is like the company he is wont to keep.&rdquo;
+  <a href="https://bartoszmilewski.com/2015/01/07/products-and-coproducts/">Bartosz Milewski continues</a>, &ldquo;We are defined by our relationships. Nowhere is this more true than in category theory. If we want to single out a particular object in a category, we can only do this by describing its pattern of relationships with other objects (and itself). These relationships are defined by morphisms.&rdquo;
+</p>
+<p>
+  The analogy is clear—understanding people is akin to understanding the categories that they inhabit.
+  We are defined by the morphisms that connect us to other people and organizations bigger than ourselves.
+  In this spirit, I will answer the question &ldquo;Who am I?&rdquo; through an exploration of the relationships that connect me to <a href="https://johncarlosbaez.wordpress.com/2015/03/27/spivak-part-1/">the world at large</a>.
+</p>
+<p>
+  I'm a member of <a href="https://functor.systems/">functor.systems</a>, itself a proper subset of the <a href="https://www.mit.edu/~ajzd/opencompute/">OpenCompute Laboratory</a> (stylized OCλ).
+  I (pretend to) study <a href="https://math.mit.edu/academics/undergrad/major/course18c.html">mathematics with computer science</a> (course 18-C) at <a href="https://share.google/dSLwSvIYTaSNytBBV">Mass Tech</a>, where I'm a sophomore ('28).
+  There I've been able to work with the <a href="https://zardini.mit.edu/">Zardini Lab</a> on categorical design theories.
+  I spent my first year in the <a href="https://esg.mit.edu/">Experimental Study Group</a> (ESG) and now work as a teaching assistant there.
+  Before that, I helped with the <a href="https://coronasurveys.org/">CoronaSurveys project</a> and spent two years leading research into robotic control systems at <a href="https://www.team1280.com/">Team 1280</a>.
+</p>
+
+<h2 class="cmd">$ whereis $(whoami)</h2>
+<p>
+  That's a <a href="https://okmij.org/ftp/Computation/monadic-shell.html">monadic bind</a>, by the way.
+  Calling <code>whoami</code> must alter the state of the world to obtain the current user's name.
+  We ignore these side effects and delay evaluation until after the result is piped to <code>whereis</code>.
+  The result of this command, however, is non-deterministic (see below).
+</p>
+<p>
+  I grew up in the East Bay in California.
+  Nowadays I split my time between Danville, Calif. and Cambridge, Mass.
+  The former is the intergalactic headquarters of <a href="https://functor.systems">functor.systems</a> and the latter is the seat of <a href="https://share.google/dSLwSvIYTaSNytBBV">Mass Tech</a>.
+</p>
+
+<div id="maps">
+  <div id="map-danville" style="width: 400px; height: 300px;"></div>
+  <div id="map-cambridge" style="width: 400px; height: 300px;"></div>
+</div>
+<p class="caption">
+  <em>Above left</em>: Danville, California
+  <br>
+  <em>Above right</em>: Cambridge, Massachusetts
+</p>
+
+<script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
+<link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
+<script>
+  var map = new maplibregl.Map({
+    container: 'map-danville',
+    style: 'https://tiles.openfreemap.org/styles/liberty',
+    center: [-122.0008863, 37.8225936],
+    pitch: 80,
+    bearing: 0,
+    zoom: 16
+  });
+</script>
+
+<script>
+  var map = new maplibregl.Map({
+    container: 'map-cambridge',
+    style: 'https://tiles.openfreemap.org/styles/liberty',
+    center: [-71.092282, 42.3596601],
+    pitch: 80,
+    bearing: 0,
+    zoom: 15
+  });
+</script>
+
+<h2 class="cmd">$ ls</h2>
+<p>
+  It turns out organizing my thoughts coherently into a single site proved more complicated than I initially expected.
+  Rather than clutter up the main menu with an assortment of links, I've attempted to come up with a more sensible organization of this site in the <a href="./explore/">explore</a> page.
+</p>
+<p>
+  Most of the other tabs are self-explanatory.
+  <a href="./about/">About</a> gives a more detailed introduction to who I am and what my current interests are.
+  I update it semi-regularly, and it's a good springboard for a focused exploration of this site.
+  For my contact information, see the <a href="./contact/">contact</a> page.
+</p>
+<p>
+  I also keep a <a href="./colophon/">colophon</a> for this site.
+  I realize this is rather unconventional—but I think it's well-motivated given the nature of this site.
+  I also have a <a href="https://macgregor.mit.edu">history of making these</a>.
+  If you're interested in the technical details involved in putting a project like this together, it will make for a good read.
+  It's continuously updated with the newest developments as I update the underlying site-builder technology.
+  The colophon also contains important credits for relevant design elements, like this site's unique typography.
+</p>
+<p>
+  Finally, this site also serves as a blog for me to philosophize about the universe and its many intricacies.
+  In keeping with the tradition of public intellectualism promoted by prominent thinkers like <a href="https://bartoszmilewski.com/">Bartosz Milewski</a>, <a href="https://johncarlosbaez.wordpress.com/">John Baez</a>, and the <a href="https://golem.ph.utexas.edu/category/">applied category theory community</a> as a whole, it seems that blogging has given us a powerful new tool to spread knowledge.
+  You can find the full record of my blog posts in the <a href="./archive/">archive</a>.
+  It's quite sparse at the moment given that it launched relatively recently, but my hope is that it will grow into a useful repository of knowledge in a few years.
+  Like the rest of this site, it's an interesting experiment that I'll come to learn from in the future.
+</p>
+
+<h2>Recently</h2>
+<p>Hot off the press:</p>
+<ul>
+    
+        <li>
+            <a href="./posts/2015-12-07-tu-quoque.html">Tu Quoque</a> - December  7, 2015
+        </li>
+    
+        <li>
+            <a href="./posts/2015-11-28-carpe-diem.html">Carpe Diem</a> - November 28, 2015
+        </li>
+    
+        <li>
+            <a href="./posts/2015-10-07-rosa-rosa-rosam.html">Rosa Rosa Rosam</a> - October  7, 2015
+        </li>
+    
+        <li>
+            <a href="./posts/2015-08-12-spqr.html">S.P.Q.R.</a> - August 12, 2015
+        </li>
+    
+</ul>
+
+
+<p>For more, search the <a href="./archive/">archives</a>.</p>
+
+        </main>
+
+        <footer>
+            <a href="https://jade.fyi/blog/the-postmodern-build-system/">Reproducibly built</a> by <a href="https://nixos.org">Nix</a>, <br>
+            <a href="https://theory.stanford.edu/~blynn/haskell/why.html">functionally assembled</a> in <a href="https://haskell.org">Haskell</a>, <br>
+            <a href="https://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence">formally verified</a> by <a href="https://ucsd-progsys.github.io/liquidhaskell/">Liquid Haskell</a>, <br>
+            <a href="https://thoughtsfactorial.com/posts/2020-05-16-modern-css-in-haskell/">monadically designed</a> with <a href="http://fvisser.nl/clay/">Clay</a>, <br>
+            and <a href="https://topos.institute/blog/2024-10-31-declarative-models-and-collaborative-modeling/">declaratively generated</a> by <a href="http://jaspervdj.be/hakyll">Hakyll</a>.
+            
+            <br><br>
+            <div class="left">
+              Credits for typography and other design elements can be found in the <a href="./colophon/">colophon</a>.
+            </div>
+            <br>
+            <div class="left">Made with ❤️ in Danville, California.</div>
+        </footer>
+    </body>
+</html>

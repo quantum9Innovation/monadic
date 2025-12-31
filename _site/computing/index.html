@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+           
+            monadi.cc | How I do my computing
+           
+        </title>
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="icon" href="../favicon.svg" />
+    </head>
+    <body>
+        <header>
+            <a href="../" class="image-link"><img src="../images/pfp.png" id="icon" /></a>
+            <div class="logo">
+                <a href="../">
+                  <div id="logo-text">
+                    monadi.cc
+                  </div>
+                </a>
+            </div>
+            <nav>
+                <a href="../explore/">Explore</a>
+                <a href="../about/">About</a>
+                <a href="../colophon/">Colophon</a>
+                <a href="../archive/">Archive</a>
+            </nav>
+        </header>
+
+        <div id="bg"></div>
+        <main role="main">
+            <h1></h1>
+            <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h2>How I do my computing</h2>
+    <p>In the spirit of <a href="https://stallman.org/">Richard Stallman</a>’s <a href="https://stallman.org/stallman-computing.html">How I do my computing</a> page and <a href="https://web.youwen.dev/tools">others like it</a>, I have decided to publicize my views on the subject along with a tirade of my personal opinions on software choices and freedom. I fundamentally disagree with the views expressed by <a href="https://web.youwen.dev/tools#loc-1">Youwen et al.</a> positing that reliance on modern technology is some form of ceding control to “the machine,” whatever that is. I find the majority of pages like this tend to engage in self-righteousness in avoiding fancy software and computing systems. Hence, the result is more about how <em>not</em> to do computing rather than how computing <em>should</em> be done.</p>
+    <p>I take the opposite view: that computation is a fundamental aspect of human existence, and serves to trivialize that which was previously nontrivial. Some of the greatest advances in modern civilization are the result of thinking alone, and computation is merely another mode of thought, allowing us to turn intellectual breakthroughs into embodied systems capable of tackling actual problems. Thus, computers have served to free us from the drudgery of manual labor and rote intellectual exercises, ushering in an era of philosophical inquiry and mathematical logic.</p>
+    <p>Ok, enough evangelizing about the nature of computation. How do I do <em>my</em> computing? I’ll answer in four parts, divided by the level of abstraction which they concern.</p>
+    <h3>Hardware</h3>
+    <p>I use an Alienware m16 R2 laptop codenamed <a href="https://code.functor.systems/q9i/netsanet">Netsanet</a> (transliterated from Ge’ez script: “ነጻነት”, which means “freedom” in Amharic) as my primary mobile computing device. This is in some ways the embodiment of proprietary hardware, especially since it comes with a discrete NVIDIA GPU, the menace of free software (it requires proprietary drivers to operate at maximum performance). This was a deliberate tradeoff between the growing need for raw computational power and the desire for a more open and free computing experience. However, the “free as in freedom” philosophy is practically impossible to implement in hardware, as the <a href="https://eexiv.functor.systems/document/view/opencompute">FOSH ecosystem is nowhere near complete</a>.</p>
+    <h3>Operating System</h3>
+    <p>I use Linux as my primary operating system. I refuse to switch to unfree alternatives like Windows or macOS. Linux is not a monolithic operating system, and the choice of a distribution is significant—it affects everything from how you install packages to how you configure permanent settings on your system. <a href="https://nixos.org/">NixOS</a> is objectively the best Linux distribution (it’s powered by the same technology that builds this site). The fundamental difference between Nix and other distributions is that Nix provides a purely functional language and package manager for configuring an entire operating system reproducibly (modulo hardware). In theory, I could port my entire system—applications, themes, settings, kernel configurations, etc.—to any other laptop with zero effort. That type of modularity is unparalleled across ecosystems.</p>
+    <p>After the result of a series of experiments in customizing NixOS, I’ve entered into a collaboration with other Nix hackers at <a href="https://code.functor.systems/functor.systems/functorOS">functor.systems</a> to create the ultimate NixOS experience, packaged as <a href="https://functor.systems/functorOS">functorOS</a>. It’s essentially a distribution <em>on top of</em> NixOS, meaning you get the benefits of reproducible configuration plus the convenience of a pre-configured environment with bleeding edge packages and modern defaults. functorOS is to NixOS what something like <a href="https://linuxmint.com/">Linux Mint</a> is to <a href="https://ubuntu.com/">Ubuntu</a>, or what <a href="https://manjaro.org/">Manjaro</a> is to <a href="https://archlinux.org/">Arch Linux</a>. The main difference being that it’s much, much better.</p>
+    <p>functorOS tracks <code>nixos-unstable</code>, the bleeding edge rolling-release branch of NixOS. As a result, it’s always up to date with the latest features and improvements, by design. It’s also the <a href="https://repology.org/repositories/statistics/total">largest package repository</a> in existence, both by number of total packages and by number of fresh (new) packages. In practice, that means I have access to the largest selection of software available to anyone, anywhere, at any time in human history.</p>
+    <p>I use the <a href="https://github.com/zen-kernel/zen-kernel"><code>linux-zen</code></a> kernel for access to low-level enhancements hot off the press. It’s a fork of the official Linux kernel maintained by a collective of expert low-level hackers tinkering to improve things I don’t understand or have good mathematical models for.</p>
+    <h3>Foundations</h3>
+    <p>Above the operating system are the core system-level tools that define what user-facing computation looks and feels like. I’ll give a brief overview of what they look like on functorOS.</p>
+    <p>The primary application that defines your <a href="https://jie-fang.github.io/blog/basics-of-ricing">Linux rice</a> is your window manager, so you need one with the necessary eye candy to impress. <a href="https://hypr.land/">Hyprland</a> has the looks, and it’s deadly fast. I don’t like tiling window managers that waste my screen space with performative binary layouts, so I use the experimental <a href="https://code.hyprland.org/hyprwm/hyprland-plugins/src/branch/main/hyprscrolling">hyprscrolling</a> plugin to achieve a <a href="https://github.com/YaLTeR/niri">scrollable window manager</a> with Hyprland.</p>
+    <p>My terminal is powered by <a href="https://sw.kovidgoyal.net/kitty/">Kitty</a>, which is fast and feature-rich. My default shell is the revolutionary Rust-based <a href="https://www.nushell.sh/">nushell</a>, which is heavily scriptable and deliberately incompatible with Bash shenanigans. It’s been hacked to use the <a href="https://fishshell.com/">Fish</a> autocompletion engine, because it’s just too good.</p>
+    <h3>Userspace</h3>
+    <p>My entire userspace is of course free and open source software. I pick tools that are well maintained, actively developed, and future-proof. They’re typically built from solid foundations—they run efficiently, cede control to users, and allow for custom hacks where needed.</p>
+    <p>I use the <a href="https://zed.dev/">Zed editor</a> (I know it by <code>zeditor</code>), which is a modern, blazingly fast, Rust-based text editor for collaboration and understanding. This is of course the primary application that defines my hacking experience.</p>
+    <p>I use the <a href="https://zen-browser.app/">Zen browser</a> for surfing the web. It’s Firefox with the eye candy and the features the modern internet multiplexer demands. It’s extremely hackable with <a href="https://zen-browser.app/mods/">Zen mods</a>. This is the default browser on functorOS.</p>
+  </body>
+</html>
+
+        </main>
+
+        <footer>
+            <a href="https://jade.fyi/blog/the-postmodern-build-system/">Reproducibly built</a> by <a href="https://nixos.org">Nix</a>, <br>
+            <a href="https://theory.stanford.edu/~blynn/haskell/why.html">functionally assembled</a> in <a href="https://haskell.org">Haskell</a>, <br>
+            <a href="https://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence">formally verified</a> by <a href="https://ucsd-progsys.github.io/liquidhaskell/">Liquid Haskell</a>, <br>
+            <a href="https://thoughtsfactorial.com/posts/2020-05-16-modern-css-in-haskell/">monadically designed</a> with <a href="http://fvisser.nl/clay/">Clay</a>, <br>
+            and <a href="https://topos.institute/blog/2024-10-31-declarative-models-and-collaborative-modeling/">declaratively generated</a> by <a href="http://jaspervdj.be/hakyll">Hakyll</a>.
+            
+            <br><br>
+            <div class="left">
+              Credits for typography and other design elements can be found in the <a href="../colophon/">colophon</a>.
+            </div>
+            <br>
+            <div class="left">Made with ❤️ in Danville, California.</div>
+        </footer>
+    </body>
+</html>
