@@ -25,26 +25,47 @@ This typically involves a lot of math, but not always.
 Some topics in fields outside mathematics and computer science that I find inspiring:
 
 - #link("https://en.wikipedia.org/wiki/Analytical_mechanics")[Analytical mechanics]
+
   - #link("https://static.uni-graz.at/fileadmin/_Persoenliche_Webseite/maas_axel/Keusch_Bachelor.pdf")[Viktoria Keusch's thesis] on a categorical interpretation of classical mechanics is particularly fascinating
+  
   - I've been meaning to read #link("https://pierre.ag.gerard.web.ulb.be/textbooks/books/Physics_from_Symmetry.pdf")[Physics from Symmetry] for a while, but unfortunately haven't had the time to devote to it yet
+  
 - #link("https://plato.stanford.edu/entries/social-choice/")[Social choice theory] and related themes in #link("https://en.wikipedia.org/wiki/Political_economy")[political economy]
+
   - I was initially interested in social choice theory because of #link("https://sites.google.com/site/wesholliday/")[Prof. Holliday] and #link("https://pacuit.org/")[Prof. Pacuit's] work on the #link("https://arxiv.org/abs/2108.00542")[Stable Voting] algorithm
+  
     - By the way, did you know Prof. Holliday's colleague in Berkeley's philosophy department #link("https://johnmacfarlane.net/")[John MacFarlane] is the creator of #link("https://github.com/jgm/pandoc")[Pandoc], probably the most popular Haskell application ever developed
+    
   - There are (unsurprisingly) #link("https://mathematics-democracy-institute.org/category-theoretic-approach-to-social-choice-theory/")[connections to category theory], though I've not looked too deeply into this yet
+  
   - In a more unexpected direction, there's a lot of work on #link("https://www.sciencedirect.com/science/article/pii/S0165176523004731")[topological approaches to social choice] that I'm particularly fascinated by
+  
   - The "related themes in political economy" part is a bit vague, but generally I'm most interested in theoretical models of democratic decision-making; this tends to involve a lot of game theory (see below)
+  
 - #link("https://en.wikipedia.org/wiki/Game_theory")[Game theory]
+
   - The foundations of microeconomics and also an extremely applied field involving some #link("https://www.uni-bamberg.de/fileadmin/uni/fakultaeten/sowi_faecher/vwl/BERG/BERG_191.pdf")[very beautiful mathematics]
+  
   - I don't have much to say about this yet, mainly because I'm still not very familiar with the subject
+  
 - #link("https://en.wikipedia.org/wiki/Linguistics")[Linguistics], especially #link("https://en.wikipedia.org/wiki/Semantics")[semantics]
+
   - I like learning languages, and linguistics truly makes you question everything you thought (or didn't think) about the fundamental structure of language itself
+  
   - I've been told there's a lot of overlap between #link("https://oxfordre.com/linguistics/display/10.1093/acrefore/9780199384655.001.0001/acrefore-9780199384655-e-329")[semantics and type theory], though I haven't yet explored the connection myself
+  
 - Philosophy, especially #link("https://en.wikipedia.org/wiki/Modal_logic")[modal logic] and #link("https://en.wikipedia.org/wiki/Epistemology")[epistemology]
+
   - Modal logic is a very analytical branch of philosophy that has a lot to do with specifying axioms in mathematics
+  
   - As you might imagine, there's #link("https://golem.ph.utexas.edu/category/2011/04/category_theoretic_modal_logic.html")[a lot of category theory involved]
+  
     - There's an #link("https://projecteuclid.org/ebooks/books-by-independent-authors/Topoi-The-Categorial-Analysis-of-Logic/toc/bia/1403013939")[entire book] on the subject actually, recommended to me by #link("https://wesholliday.net")[Prof. Holliday]
+    
   - Lately I've also decided I should take a look at the following two texts, as they seem to be widely embraced by category theorists worldwide (see #link("https://dspivak.net/ValuesStatement.pdf")[Spivak's values statement] and the canonical #link("https://ncatlab.org/nlab/show/category+of+being")[category of being]):
+  
     - The #link("https://en.wikipedia.org/wiki/Tao_Te_Ching")[_Tao Te Ching_] by Lao Tzu, an ancient Chinese text tackling questions in metaphysics and unraveling the fundamental laws of the universe
+    
     - Georg Wilhelm Friedrich Hegel's #link("https://www.marxists.org/reference/archive/hegel/works/sl/slbeing.htm")[_Doctrine of Being_], the first part of the first volume of the larger #link("https://en.wikipedia.org/wiki/Science_of_Logic")[_Science of Logic_], which deals with the natural foundations of logic and introduces the ideas of _being_ and _becoming_
 
 If you're interested in any of these subjects, feel free to #link("/contact/")[contact me]\; I'm always happy to discuss these topics with other people.

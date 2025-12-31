@@ -359,7 +359,69 @@ styles = do
     width (pct 20)
     margin (px 0) (px 0) (px 0) (px 0)
     borderRadius (px 20) (px 20) (px 20) (px 20)
+    
+  query Media.all [Media.prefersColorScheme Media.dark] $ do
+    ":root" ? do
+      backgroundColor black
+      color white
+    
+    "::selection" ? do
+      backgroundColor deepsky
+      color black
 
+    "*" ? do
+      color white
+      
+    p ? do
+      color white
+      
+    li ? do
+      color white
+      
+    nav ? a ? do
+      color white
+      ":hover" & do
+        color black
+        backgroundColor white
+      
+    "#logo-text" ? do
+      color white
+      ":hover" & do
+        color black
+        backgroundColor white
+        
+    blockquote ? do
+      ".quote" ? do
+        color white
+      ".attr" ? do
+        color white
+        a ? do
+          color lightgray
+    
+    a ? do
+      color deepsky
+      ":hover" & do
+        color black
+        backgroundColor deepsky
+        
+    header ? do
+      borderBottom (Clay.rem 0.2) solid white
+      
+    ".username" ? a ? do
+      color deepsky
+      ":hover" & do
+        color black
+        
+    footer ? do
+      color white
+      borderTop (Clay.rem 0.2) solid white
+      
+    ".typst-frame" ? do
+      Clay.filter $ invert (pct 100)
+      
+    article ? ".header" ? do
+      color lightgray
+      
   query Media.screen [Media.maxWidth (px 475)] $ do
     body ? do
       fontSize (Clay.rem 1.5)
@@ -580,6 +642,10 @@ styles = do
       a ? do
         float floatLeft
         fontSize (Clay.rem 2.2)
+  
+  query Media.screen [Media.minWidth (px 1024), Media.prefersColorScheme Media.dark] $ do
+    header ? do
+      borderBottom (Clay.rem 0.2) solid white
 
 css :: String
 css = TL.unpack $ renderWith compact [] styles
