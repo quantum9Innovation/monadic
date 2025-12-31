@@ -643,6 +643,14 @@ styles = do
         float floatLeft
         fontSize (Clay.rem 2.2)
   
+  query Media.screen [Media.minWidth (px 476), Media.maxWidth (px 600), Media.prefersColorScheme Media.dark] $ do
+    header ? do
+      borderBottom (Clay.rem 0.2) solid white
+      
+  query Media.screen [Media.minWidth (px 601), Media.maxWidth (px 1023), Media.prefersColorScheme Media.dark] $ do
+    header ? do
+      borderBottom (Clay.rem 0.2) solid white
+      
   query Media.screen [Media.minWidth (px 1024), Media.prefersColorScheme Media.dark] $ do
     header ? do
       borderBottom (Clay.rem 0.2) solid white
